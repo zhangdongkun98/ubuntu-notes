@@ -1,0 +1,76 @@
+关于参考古月《ROS探索总结（五）——创建简单的机器人模型smartcar》在kinetic中实现总结
+	https://blog.csdn.net/ds1234/article/details/78617273?utm_source=blogxgwz0
+
+ROS学习——URDF文件解析
+	https://blog.csdn.net/Kalenee/article/details/86485565
+
+【探索之路】机器人篇(5)-Gazebo物理仿真环境搭建_让机器人运动起来
+	https://www.cnblogs.com/ynxf/p/9655596.html
+
+ROS No transform from [sth] to [sth]
+	https://blog.csdn.net/hitgavin/article/details/51997379
+
+解决 Controller spawner couldn't find the expected controller_manager ros interface
+	https://blog.csdn.net/subiluo/article/details/81004382
+
+gazebo_ros_control plugin: GazeboRosControlPlugin missing <legacyModeNS> DefaultRobotHWSim
+	https://answers.ros.org/question/292444/gazebo_ros_control-plugin-gazeboroscontrolplugin-missing-legacymodens-defaultrobothwsim/
+
+
+
+
+为串联机械臂写一个ROS控制器
+	https://blog.csdn.net/wxflamy/article/details/79266726
+
+ros_control 如何写一个controller
+	https://blog.csdn.net/xunshanzuanfeng/article/details/53968028
+
+ros空间中只编译特定软件包的方法
+	https://blog.csdn.net/u010925447/article/details/81223856
+
+【ROS学习】（五）ROS消息传递——自定义消息
+	https://blog.csdn.net/wengge987/article/details/50619294
+
+ROS学习之路04：编写基于自定义消息(.msg)进行通信的节点
+	https://blog.csdn.net/l1216766050/article/details/79551498
+
+Ros中创建msg和srv遇到的问题
+	https://blog.csdn.net/weixin_40712763/article/details/78905454
+
+ROS自定义msg类型以及使用
+	https://blog.csdn.net/u012319441/article/details/78309781
+
+ROS笔记：引用同一工作空间下其他包中的 .h 文件
+	https://blog.csdn.net/weixin_43651761/article/details/85557291
+
+
+
+ROS报错处理(持续更新)
+        运行launch文件时报错
+	https://blog.csdn.net/li528405176/article/details/81941338
+        ROS 编译出错 error: ‘shared_ptr’ in namespace ‘std’ does not name a template type
+	https://blog.csdn.net/weixin_42268975/article/details/80734537
+
+
+
+
+
+
+
+用ＲＯＳ制作我们的机器人小车（一）： URDF简介
+        xacro转urdf
+	rosrun xacro xacro.py 04_xacro.xacro > 04_xacro.urdf
+	https://blog.csdn.net/sujun3304/article/details/18962719
+
+graphviz在ubuntu下安装使用简单备忘
+	https://blog.csdn.net/robin_xu_shuai/article/details/53355711
+
+Maybe useful
+ROS与Matlab系列：一个简单的运动控制
+	https://www.cnblogs.com/yrm1160029237/p/9923694.html
+
+MATLAB与ROS开始（3）---PR2机器人运动控制（翻译）
+	https://blog.csdn.net/weixin_39090239/article/details/84378770
+
+ROS速成之发送&接收消息
+	https://blog.csdn.net/foreverhehe716/article/details/83055323
