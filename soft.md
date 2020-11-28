@@ -240,13 +240,15 @@ sudo gedit matlab.desktop
 
 # VSCode
 
+[VsCode自动生成头部注释和函数注释（无插件，python为例）](https://blog.csdn.net/weixin_44437652/article/details/107720580)
+
 ```bash
 # https://code.visualstudio.com/下载
 sudo apt-get install -f
 
 # pip install flake8
 pip install yapf
-# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense
+# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, 
 # preference -> color scheme
 
 # sett

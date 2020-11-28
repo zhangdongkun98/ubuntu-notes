@@ -35,11 +35,3 @@
 		/home/zdk/.local/bin/pip
 	vim /home/zdk/.local/bin/pip
 		将第一行 #!/usr/bin/python3 修改为 #!/usr/bin/python2
-
-
-# 学习文档
-[文档](https://linuxtools-rst.readthedocs.io/zh_CN/latest/index.html#)
-
-##Linux基础
-
-	2.2 更改当前工作路径为path: $cd path
