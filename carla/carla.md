@@ -33,3 +33,8 @@
 	*#install required ros-dependencies*
 	rosdep update
 	rosdep install --from-paths src --ignore-src -r *#build* catkin_make
+
+
+## Build
+
+	编译前关掉conda

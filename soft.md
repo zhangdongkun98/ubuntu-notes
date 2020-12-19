@@ -51,7 +51,14 @@ sudo vim /etc/vim/vimrc
 [自动保存](https://www.cnblogs.com/mzzz/p/6178341.html)
 
 
+# FireFox
+
+	卸载默认版本
+	sudo apt-get purge firefox firefox-locale-en firefox-locale-zh-hans
+
+
 # Google
+
 [安装](https://blog.csdn.net/weixin_38883338/article/details/82153634)
 
 	（网址）https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -248,7 +255,7 @@ sudo apt-get install -f
 
 # pip install flake8
 pip install yapf
-# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, 
+# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, pylance
 # preference -> color scheme
 
 # sett
