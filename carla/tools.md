@@ -8,7 +8,7 @@ libclang-common-6.0-dev libclang1-6.0 libomp-dev libomp5 llvm-6.0 llvm-6.0-dev l
 ```
 - version 7.1
 ```
-	clang-7 libclang-common-7-dev libclang1-7 libllvm7 libomp-7-dev libomp5-7 lld-7 F llvm-7-dev llvm-7-runtime
+	clang-7 libclang-common-7-dev libclang1-7 libllvm7 libomp-7-dev libomp5-7 lld-7 llvm-7 llvm-7-dev llvm-7-runtime
 ```
 
 - version 8.0

@@ -47,3 +47,10 @@ sudo umount /dev/sdb4
 
 ## 查看磁盘
 	lsblk
+
+cha kan sheng yu kong jian
+
+```
+df -hl
+```
+
