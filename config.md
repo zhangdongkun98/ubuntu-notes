@@ -441,3 +441,31 @@ sudo docker run hello-world
 [a bug](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
 	sudo chmod 666 /var/run/docker.sock
+
+
+
+
+
+## TP-LINK 无线网卡（TL-WDN5200H免驱版）安装驱动
+[blog](https://zhuanlan.zhihu.com/p/214136483)
+
+	git clone https://github.com/brektrou/rtl8821CU.git
+	
+	make
+	sudo make install
+	sudo modprobe 8821cu
+	lsusb （用于查看网卡，得到的结果里应该有0bda:1a2b）
+	sudo usb_modeswitch -KW -v 0bda -p 1a2b
+	systemctl start bluetooth.service
+
+
+## 双网卡上网
+
+[blog](https://blog.csdn.net/dajiangqingzhou/article/details/82901666)
+
+	subl /etc/rc.local
+		route add -net 0.0.0.0/0 wlx5475950277bd
+        route add -net 0.0.0.0/0 gw 192.168.31.1
+        route add -net 10.0.0.0/8 enp7s0
+        route add -net 10.0.0.0/8 gw 10.12.120.1
+	reboot

@@ -4,10 +4,14 @@ ARG GIT_BRANCH
 
 USER root
 
+# RUN apt-get update ; \
+#   add-apt-repository ppa:~mhier/libboost-latest && \
+#   apt-get update ; \
+#   apt-get install -y ccache libboost1.73-dev libbz2-dev
+
 RUN apt-get update ; \
-  add-apt-repository ppa:~mhier/libboost-latest && \
-  apt-get update ; \
-  apt-get install -y libboost1.70-dev libbz2-dev
+  apt-get install -y ccache libboost-all-dev libbz2-dev
+
 
 USER ue4
 

@@ -36,3 +36,5 @@ cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMateri
 ```
 
 when docker in     add-apt-repo  : do not use —network host !!!
+
+Update.sh need to be rewrite
