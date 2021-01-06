@@ -291,3 +291,9 @@ sudo dpkg -i  teamviewer_13.2.26559_amd64.deb
 
 	sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
 	sudo apt-get install gnome-core
+
+	sudo apt install xfce4 xfce4-goodies tightvncserver
+
+	vncserver-virtual -kill :88
+	vncserver-virtual :88
+	vncserver-virtual :88 -geometry 2240x1260
