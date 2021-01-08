@@ -269,6 +269,9 @@ pip install yapf
 }
 ```
 
+[Git + VS Code + Overleaf](https://medium.com/@maumneto/git-vs-code-overleaf-91ecfd586b36)
+
+
 # teamviewer
 
 ```bash
