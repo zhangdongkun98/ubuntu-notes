@@ -167,7 +167,7 @@ sudo apt-get install -f
 sudo reboot
 
 ubuntu-drivers devices     #查看合适的显卡驱动版本
-sudo apt-get install nvidia-430
+sudo apt install nvidia-430
 ```
 
 ## cuda10.1
@@ -202,13 +202,26 @@ make
 # 若这两个测试的最后结果都是Result = PASS，说明CUDA安装成功
 ```
 
-## cuda 11.2
+## CUDA Toolkit 11.2 Download
+[doc](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
 ```bash
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
 sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
 wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda-repo-ubuntu1804-11-2-local_11.2.0-460.27.04-1_amd64.deb
 sudo dpkg -i cuda-repo-ubuntu1804-11-2-local_11.2.0-460.27.04-1_amd64.deb
 sudo apt-key add /var/cuda-repo-ubuntu1804-11-2-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+```
+
+## CUDA Toolkit 11.0 Download
+[doc](https://developer.nvidia.com/cuda-11.0-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=deblocal)
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda-repo-ubuntu1804-11-0-local_11.0.2-450.51.05-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-0-local_11.0.2-450.51.05-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-0-local/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda
 ```
