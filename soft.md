@@ -44,7 +44,7 @@ sudo vim /etc/vim/vimrc
 	./sublime_text_3/sublime_text
 	gedit subl
 		#!/bin/sh
-		exec /opt/sublime_text_3/sublime_text "$@"
+		exec ~/opt/sublime/sublime_text_3/sublime_text "$@"
 	chmod a+x subl
 	sudo cp subl /usr/bin/
 
@@ -255,7 +255,7 @@ sudo apt-get install -f
 
 # pip install flake8
 pip install yapf
-# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, pylance
+# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, pylance, vscode-pdf
 # preference -> color scheme
 
 # sett

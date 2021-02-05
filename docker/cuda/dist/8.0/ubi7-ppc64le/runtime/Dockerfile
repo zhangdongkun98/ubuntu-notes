@@ -1,0 +1,41 @@
+FROM registry.access.redhat.com/ubi7/ubi:latest
+
+LABEL maintainer "NVIDIA CORPORATION <sw-cuda-installer@nvidia.com>"
+
+RUN NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \
+    curl -fsSL https://developer.download.nvidia.com/compute/cuda/repos/rhel7/ppc64le/7fa2af80.pub | sed '/^Version/d' > /etc/pki/rpm-gpg/RPM-GPG-KEY-NVIDIA && \
+    echo "$NVIDIA_GPGKEY_SUM  /etc/pki/rpm-gpg/RPM-GPG-KEY-NVIDIA" | sha256sum -c --strict  -
+
+COPY cuda.repo /etc/yum.repos.d/cuda.repo
+
+ENV CUDA_VERSION 8.0.61
+ENV CUDA_PKG_VERSION 8-0-$CUDA_VERSION-1
+
+# For libraries in the cuda-compat-* package: https://docs.nvidia.com/cuda/eula/index.html#attachment-a
+RUN yum upgrade -y && yum install -y \
+    cuda-nvrtc-$CUDA_PKG_VERSION \
+    cuda-nvgraph-$CUDA_PKG_VERSION \
+    cuda-cusolver-$CUDA_PKG_VERSION \
+    cuda-cublas-8-0-8.0.61.2-1 \
+    cuda-cufft-$CUDA_PKG_VERSION \
+    cuda-curand-$CUDA_PKG_VERSION \
+    cuda-cusparse-$CUDA_PKG_VERSION \
+    cuda-npp-$CUDA_PKG_VERSION \
+    cuda-cudart-$CUDA_PKG_VERSION \
+    && ln -s cuda-8.0 /usr/local/cuda \
+    && yum clean all \
+    && rm -rf /var/cache/yum/*
+
+# nvidia-docker 1.0
+LABEL com.nvidia.volumes.needed="nvidia_driver"
+LABEL com.nvidia.cuda.version="${CUDA_VERSION}"
+RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
+    echo "/usr/local/nvidia/lib64" >> /etc/ld.so.conf.d/nvidia.conf
+
+ENV PATH /usr/local/nvidia/bin:/usr/local/cuda/bin:${PATH}
+ENV LD_LIBRARY_PATH /usr/local/nvidia/lib:/usr/local/nvidia/lib64
+
+# nvidia-container-runtime
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
+ENV NVIDIA_REQUIRE_CUDA "cuda>=8.0"

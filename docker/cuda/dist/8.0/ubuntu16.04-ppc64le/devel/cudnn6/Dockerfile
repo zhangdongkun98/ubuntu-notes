@@ -1,0 +1,15 @@
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:8.0-devel-ubuntu16.04
+LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
+
+RUN echo "deb https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/ppc64el /" > /etc/apt/sources.list.d/nvidia-ml.list
+
+ENV CUDNN_VERSION 6.0.21
+
+LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcudnn6=$CUDNN_VERSION-1+cuda8.0 \
+    libcudnn6-dev=$CUDNN_VERSION-1+cuda8.0 \
+    && apt-mark hold libcudnn6 && \
+    rm -rf /var/lib/apt/lists/*

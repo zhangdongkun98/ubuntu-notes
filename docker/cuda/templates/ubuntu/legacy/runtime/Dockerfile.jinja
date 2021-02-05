@@ -1,0 +1,85 @@
+ARG IMAGE_NAME
+FROM ${IMAGE_NAME}:{{ cuda.version.major }}.{{ cuda.version.minor }}-base-{{ cuda.os.distro }}{{ cuda.os.version }}{{ cuda.image_tag_suffix if "image_tag_suffix" in cuda }}
+
+LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
+
+{% if "libnccl2" in cuda.components  %}
+    {% set nccl_component_version = cuda.components.libnccl2.version %}
+    {% if "-" in nccl_component_version %}
+        {% set nccl_component_version = cuda.components.libnccl2.version[:-2] %}
+    {% endif %}
+ENV NCCL_VERSION {{ nccl_component_version }}
+
+{% endif -%}
+
+{% if "libnpp" in cuda.components %}
+    {% set libnpp_component_version = cuda.version.major + "-" + cuda.version.minor + "=" + cuda.components.libnpp.version %}
+{% endif %}
+{% if "libcublas" in cuda.components %}
+    {% set libcublas_component_version = cuda.version.major + "-" + cuda.version.minor + "=" + cuda.components.libcublas.version %}
+{% endif %}
+{% if "libraries" in cuda.components %}
+    {% set libraries_component_version = cuda.version.major + "-" + cuda.version.minor + "=" + cuda.components.libraries.version %}
+{% endif %}
+{% if "nvtx" in cuda.components %}
+    {% set nvtx_component_version = cuda.version.major + "-" + cuda.version.minor + "=" + cuda.components.nvtx.version -%}
+{% endif -%}
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    cuda-libraries-{{ libraries_component_version if libraries_component_version and cuda.version.major | int >= 10 else "$CUDA_PKG_VERSION" }} \
+    {% if (cuda.arch != "arm64" and cuda.version.major | int <= 10) or cuda.version.build == 89 %}
+    cuda-npp-{{ libnpp_component_version if libnpp_component_version and cuda.version.major | int >= 10 else "$CUDA_PKG_VERSION" }} \
+    {% elif cuda.version.major | int > 10 %}
+    libnpp-{{ libnpp_component_version if libnpp_component_version and cuda.version.major | int >= 10 else "$CUDA_PKG_VERSION" }} \
+    {% endif %}
+    {% if (cuda.version.major_minor == "9.2" ) or cuda.version.major | int >= 10 %}
+    cuda-nvtx-{{ nvtx_component_version if nvtx_component_version and cuda.version.major | int >= 10 else "$CUDA_PKG_VERSION" }} \
+    {% endif %}
+    {% if "libcublas" in cuda.components %}
+        {% if cuda.version.major_minor in ["10.1", "10.2"] %}
+            {% set l4t = (cuda.arch == "arm64" and cuda.version.build != 89) %}
+            {% set suffix = "10" if not l4t else "-10-2" %}
+            {% set cublas_vers = suffix + "=" + cuda.components.libcublas.version %}
+        {% else %}
+            {% set cublas_vers = "-" + libcublas_component_version %}
+        {% endif %}
+    {% endif %}
+    {% if cuda.version.major_minor in ["9.0", "9.1", "9.2", "10.0"] %}
+        {# This should never change at this point #}
+        {% if cuda.version.major_minor == "9.0" %}
+            {% set cublas_vers = "-9-0=9.0.176.4-1" %}
+        {% endif %}
+        {% if cuda.version.major_minor == "9.1" %}{% set cublas_vers = "-9-1=9.1.85.3-1" %}{% endif %}
+        {% if cuda.version.major_minor == "9.2" %}{% set cublas_vers = "-9-2=9.2.148.1-1" %}{% endif %}
+    cuda-cublas{{ cublas_vers }} \
+    {% else %}
+    libcublas{{ cublas_vers }} \
+    {% endif %}
+    {% if "libnccl2" in cuda.components and "source" not in cuda.components.libnccl2 %}
+    libnccl2=$NCCL_VERSION-1+cuda{{ cuda.version.major }}.{{ cuda.version.minor }} \
+    && apt-mark hold libnccl2 \
+    {% endif %}
+    && rm -rf /var/lib/apt/lists/*
+
+{% if cuda.version.major_minor in ["10.0", "10.1"] %}
+    {% set cublas_pkg_name = "cuda-cublas-{}-{}".format(cuda.version.major, cuda.version.minor) %}
+    {% if cuda.version.major_minor == "10.1" %}
+        {% set cublas_pkg_name = "libcublas10" %}
+    {% endif %}
+# apt from auto upgrading the cublas package. See https://gitlab.com/nvidia/container-images/cuda/-/issues/88
+RUN apt-mark hold {{ cublas_pkg_name }}
+
+{% endif -%}
+
+{% if "libnccl2" in cuda.components and "source" in cuda.components.libnccl2 %}
+    {% set arch = cuda.arch %}
+    {% if cuda.arch == "arm64" %} {% set arch = "aarch64" %} {% endif %}
+    {% set basename =  "nccl_" + cuda.components.libnccl2.version + "-1+cuda" + cuda.version.major + "." + cuda.version.minor + "_" + arch + ".txz" %}
+RUN apt update && apt install curl xz-utils -y --no-install-recommends && NCCL_DOWNLOAD_SUM={{ cuda.components.libnccl2.sha256sum }} && \
+    curl -fsSL {{ cuda.components.libnccl2.source }} -O && \
+    echo "$NCCL_DOWNLOAD_SUM  {{ basename }}" | sha256sum -c - && \
+    tar --no-same-owner --keep-old-files --lzma -xvf {{ basename }} -C /usr/local/cuda/lib64/ --strip-components=2 --wildcards '*/lib/libnccl.so.*' && \
+    tar --no-same-owner --keep-old-files --lzma -xvf  {{ basename }} -C /usr/lib/pkgconfig/ --strip-components=3 --wildcards '*/lib/pkgconfig/*' && \
+    rm {{ basename }} && \
+    ldconfig && rm -rf /var/lib/apt/lists/*
+{% endif %}

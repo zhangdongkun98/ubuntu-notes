@@ -189,6 +189,7 @@ sudo bash cuda_xxx.run
 	--help：查看更多高级选项
 sudo apt install nvidia-cuda-toolkit
 nvcc -V    # 若显示版本信息则成功
+cat /usr/local/cuda/version.txt
 
 #编译并测试设备 deviceQuery：
 cd ～/NVIDIA_CUDA-10.1_Samples/1_Utilities/deviceQuery
@@ -200,6 +201,18 @@ make
 ./bandwidthTest
 # 若这两个测试的最后结果都是Result = PASS，说明CUDA安装成功
 ```
+
+## cuda 11.2
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda-repo-ubuntu1804-11-2-local_11.2.0-460.27.04-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1804-11-2-local_11.2.0-460.27.04-1_amd64.deb
+sudo apt-key add /var/cuda-repo-ubuntu1804-11-2-local/7fa2af80.pub
+sudo apt-get update
+sudo apt-get -y install cuda
+```
+
 
 ## cuDNN
 [download](https://developer.nvidia.com/rdp/cudnn-download)

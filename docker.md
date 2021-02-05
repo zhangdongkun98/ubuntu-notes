@@ -10,16 +10,60 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
+
 systemctl status docker
 sudo systemctl start docker
 sudo docker run hello-world
 ```
 
+
+安装 nvidia-docker
+```bash
+# 清理以前的。If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
+sudo docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
+sudo apt-get purge -y nvidia-docker
+sudo apt autoremove
+ 
+# 执行命令。Add the package repositories
+# command 1
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | \
+  sudo apt-key add -
+ 
+# command 2
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+ 
+# command 3
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | \
+  sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+ 
+# 正式安装。Install nvidia-docker2 and reload the Docker daemon configuration
+sudo apt-get install -y nvidia-docker2
+sudo pkill -SIGHUP dockerd
+ 
+# 测试一下。 Test nvidia-smi with the latest official CUDA image
+docker run -v /usr/local/nvidia//:/usr/local/nvidia -it --rm --gpus all nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04 bash
+docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+```
+
+
 [a bug](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
 	sudo chmod 666 /var/run/docker.sock
 
+## docker源
+```bash
+cat /etc/docker/daemon.json
 
+{
+   "runtimes": {
+      "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+      }
+   }
+}
+```
 
 [proxy](https://note.qidong.name/2020/05/docker-proxy/)
 
@@ -48,7 +92,14 @@ sudo docker run hello-world
 
 
 
+# use cuda in docker
 
+```bash
+apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+
+git clone https://gitlab.com/nvidia/container-images/cuda.git
+
+```
 
 
 
