@@ -1,3 +1,6 @@
+## torch版本选择
+[items](https://download.pytorch.org/whl/torch_stable.html)
+
 ## 内存泄露
 
 [PyTorch 有哪些坑/bug？](https://www.zhihu.com/question/67209417)
