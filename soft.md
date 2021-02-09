@@ -265,7 +265,8 @@ pip install yapf
     "python.pythonPath": "/usr/bin/python2.7",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "yapf"
+    "python.formatting.provider": "yapf",
+	"python.languageServer": "Pylance",
 }
 ```
 
