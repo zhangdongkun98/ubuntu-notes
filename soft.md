@@ -255,7 +255,7 @@ sudo apt-get install -f
 
 # pip install flake8
 pip install yapf
-# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, pylance, vscode-pdf
+# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, Git History, pylance, vscode-pdf
 # preference -> color scheme
 
 # sett
@@ -295,9 +295,9 @@ sudo dpkg -i  teamviewer_13.2.26559_amd64.deb
 
 	sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
 	sudo apt-get install gnome-core
-
+	
 	sudo apt install xfce4 xfce4-goodies tightvncserver
-
+	
 	vncserver-virtual -kill :88
 	vncserver-virtual :88
 	vncserver-virtual :88 -geometry 2240x1260
