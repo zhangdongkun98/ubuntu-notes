@@ -6,11 +6,9 @@
 
 [OpenDrive格式地图数据解析](https://blog.csdn.net/lewif/article/details/78575840#commentBox)
 
-## carla安装
 
 
-
-##安装
+## 安装
 寻找硬盘中的附件
 
 	NVIDIA驱动，在右上角设备中查看 图形，若与显卡型号一致则正常
@@ -18,7 +16,6 @@
 	技巧：翻墙；利用服务器git clone，然后scp到本地
 	
 	Update.sh修改  
-
 
 
 
@@ -34,7 +31,3 @@
 	rosdep update
 	rosdep install --from-paths src --ignore-src -r *#build* catkin_make
 
-
-## Build
-
-	编译前关掉conda

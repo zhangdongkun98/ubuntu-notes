@@ -166,8 +166,8 @@ docker run -it --rm  carla:latest /bin/bash
 
 
 
-# ying yong
-### weixin
+# 应用
+### 微信
 ```bash
 xhost +
 docker pull bestwu/wechat

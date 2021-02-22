@@ -38,3 +38,15 @@ cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMateri
 when docker in     add-apt-repo  : do not use —network host !!!
 
 Update.sh need to be rewrite
+
+
+
+
+
+
+# Without Docker (On Ubuntu 18.04)
+## 0. Requirements
+
+
+## 1. Build UE4
+
