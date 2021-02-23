@@ -61,3 +61,10 @@ function download_content {
 ```bash
 echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
 ```
+
+```bash
+make CarlaUE4Editor
+make PythonAPI
+make build.utils
+make package
+```
