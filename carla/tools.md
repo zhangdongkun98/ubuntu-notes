@@ -1,6 +1,9 @@
 # clang
+[download](https://releases.llvm.org/download.html)
 
-	sudo apt install clang-7 lld-7
+```
+sudo apt install clang-7 lld-7
+```
 
 - version 6.0
 ```
