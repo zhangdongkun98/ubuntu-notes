@@ -47,10 +47,12 @@ git clone -b https://github.com/carla-simulator/carla.git
 
 
 maybe optional:
+```python
 distutils.unixcompiler.UnixCCompiler:
 def _compile
-if '-specs=/usr/share/dpkg/no-pie-compile.specs' in compiler_so:
-            compiler_so.remove('-specs=/usr/share/dpkg/no-pie-compile.specs')
+    if '-specs=/usr/share/dpkg/no-pie-compile.specs' in compiler_so:
+        compiler_so.remove('-specs=/usr/share/dpkg/no-pie-compile.specs')
+```
 
 修改  download_content
 ```bash
