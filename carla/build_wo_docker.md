@@ -15,7 +15,12 @@ sudo apt-get update
 ```
 
 ```bash
-sudo apt-get install build-essential clang-7 lld-7 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&
+sudo apt-get install --reinstall libpng16-16=1.6.34-1
+sudo apt install --reinstall libjpeg-turbo8=1.5.2-0ubuntu5
+sudo apt install --reinstall libjpeg-turbo8-dev
+sudo apt install libjpeg8-dev
+
+sudo apt-get install build-essential clang-7 lld-7 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3.6-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&
 pip2 install --user setuptools &&
 pip3 install --user setuptools 
 ```
