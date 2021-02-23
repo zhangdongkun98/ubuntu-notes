@@ -38,3 +38,26 @@ cd ~/UnrealEngine_4.22
 ./Setup.sh && ./GenerateProjectFiles.sh && make
 cd ~/UnrealEngine_4.22/Engine/Binaries/Linux && ./UE4Editor
 ```
+## 2. Build carla
+```bash
+git clone -b https://github.com/carla-simulator/carla.git
+```
+
+修改  download_content
+```bash
+function download_content {
+  cp ~/carla_server/save/Content.tar.gz .
+  mkdir -p Content
+  tar -xvzf Content.tar.gz -C Content
+  # rm Content.tar.gz
+  mkdir -p "$CONTENT_FOLDER"
+  mv Content/* "$CONTENT_FOLDER"
+  rm -rf Content
+  echo "$CONTENT_ID" > "$VERSION_FILE"
+  echo "Content updated successfully."
+}
+```
+
+```bash
+echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
+```
