@@ -77,6 +77,7 @@ ssr config
 ## electron-ssr
 [原址](https://github.com/chenchaohan/electron-ssr)
 [备份](https://github.com/qingshuisiyuan/electron-ssr-backup)
+[dependency](https://github.com/qingshuisiyuan/electron-ssr-backup/blob/master/Ubuntu.md)
 
 ```sh
 sudo apt-get -f install libappindicator1 libindicator7
