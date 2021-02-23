@@ -335,30 +335,6 @@ esac
 ```
 
 
-## Docker
-
-[blog](https://blog.csdn.net/jinking01/article/details/82490688)
-
-```bash
-sudo apt-get remove docker docker-engine docker-ce docker.io
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt-get update
-sudo apt-get install -y docker-ce
-systemctl status docker
-sudo systemctl start docker
-sudo docker run hello-world
-```
-
-
-
-[a bug](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
-
-	sudo chmod 666 /var/run/docker.sock
-
-
 
 ## conda
 
