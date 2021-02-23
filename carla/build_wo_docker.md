@@ -69,6 +69,7 @@ function download_content {
 
 ```bash
 echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
+source ~/.bashrc
 ```
 
 ```bash
