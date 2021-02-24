@@ -37,3 +37,7 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-7/bin/clan
 卸载（见目录附件）：
 cat installed.txt | xargs sudo rm -f
 ```
+
+
+# Boost
+[releases](https://dl.bintray.com/boostorg/release/1.72.0/source/)
