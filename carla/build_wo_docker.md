@@ -40,6 +40,12 @@ cd ~/UnrealEngine_4.22
 ./Setup.sh && ./GenerateProjectFiles.sh && make
 cd ~/UnrealEngine_4.22/Engine/Binaries/Linux && ./UE4Editor
 ```
+
+```bash
+echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## 2. Build carla
 ```bash
 git clone -b https://github.com/carla-simulator/carla.git
@@ -67,11 +73,6 @@ function download_content {
   echo "$CONTENT_ID" > "$VERSION_FILE"
   echo "Content updated successfully."
 }
-```
-
-```bash
-echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
-source ~/.bashrc
 ```
 
 ```bash
