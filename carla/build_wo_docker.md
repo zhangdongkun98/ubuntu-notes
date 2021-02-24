@@ -94,3 +94,23 @@ cp CustomAssets/EmptyMap.umap Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/EmptyM
 cp CustomAssets/EmptyMap_BuiltData.uasset Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/
 cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMaterials/Ground/
 ```
+
+```bash
+## Setup.sh
+BOOST_PATH=${PWD}/${BOOST_BASENAME}-install
+log "Building libosmium with libstdc++."
+log ${BOOST_PATH}
+cmake -G "Ninja" \
+  -DCMAKE_CXX_FLAGS="-fPIC -std=c++14" \
+  -DCMAKE_INSTALL_PREFIX="../${LIBOSMIUM_BASENAME}-libstdcxx-install/" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DINSTALL_GDALCPP=OFF \
+  -DINSTALL_PROTOZERO=ON \
+  -DINSTALL_UTFCPP=ON \
+  -DBUILD_EXAMPLES=OFF \
+  -DBUILD_TESTING=OFF \
+  -DBOOST_ROOT="${BOOST_PATH}" \
+  -DBOOST_LIBRARYDIR="${BOOST_PATH}/lib" \
+  ../${LIBOSMIUM_BASENAME}-source
+
+```
