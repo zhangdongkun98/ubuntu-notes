@@ -87,6 +87,8 @@ make package
 [build](https://adacompnus.github.io/summit-docs/getting_started/building/)
 ```bash
 sudo apt install ccache
+pip2 install numpy
+pip3 install numpy
 ```
 
 ```bash
