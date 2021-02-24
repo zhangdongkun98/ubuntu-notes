@@ -96,7 +96,7 @@ cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMateri
 ```
 
 ```bash
-## Setup.sh
+## Util/BuildTools/Setup.sh
 BOOST_PATH=${PWD}/${BOOST_BASENAME}-install
 log "Building libosmium with libstdc++."
 log ${BOOST_PATH}
