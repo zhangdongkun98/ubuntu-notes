@@ -96,6 +96,9 @@ pip3 install numpy
 cp CustomAssets/EmptyMap.umap Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/EmptyMap.umap
 cp CustomAssets/EmptyMap_BuiltData.uasset Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/
 cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMaterials/Ground/
+
+## maybe optional
+rm Unreal/CarlaUE4/Content/Carla/Static/Vegetation/Veg_Tree_DatePalm_v001.uasset
 ```
 
 ```bash
