@@ -85,6 +85,7 @@ make package
 
 ## 3. Build summit
 [build](https://adacompnus.github.io/summit-docs/getting_started/building/)
+[hint](https://www.badprog.com/c-boost-building-the-boost-python-numpy-extension-as-a-library)
 ```bash
 sudo apt install ccache
 pip2 install numpy
