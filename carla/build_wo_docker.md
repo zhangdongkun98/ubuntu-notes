@@ -80,3 +80,16 @@ make PythonAPI
 make build.utils
 make package
 ```
+
+
+## 3. Build summit
+[build](https://adacompnus.github.io/summit-docs/getting_started/building/)
+```bash
+sudo apt install ccache
+```
+
+```bash
+cp CustomAssets/EmptyMap.umap Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/EmptyMap.umap
+cp CustomAssets/EmptyMap_BuiltData.uasset Unreal/CarlaUE4/Content/Carla/Maps/TestMaps/
+cp CustomAssets/M_Tile.uasset Unreal/CarlaUE4/Content/Carla/Static/GenericMaterials/Ground/
+```
