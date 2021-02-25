@@ -362,5 +362,9 @@ sudo systemctl restart apache2
 
 ### edit /var/www/owncloud/config/config.php
 
+	‘localhost’ from your owncloud box itself
+	‘192.168.blah.blah’ from your home class C network computers
+	‘my.public.ip’ when accessing from the outside world
+
 ```
 
