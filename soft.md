@@ -359,5 +359,8 @@ sudo a2enmod mime
 sudo systemctl restart apache2
 
 ### check http://localhost/owncloud/
+
+### edit /var/www/owncloud/config/config.php
+
 ```
 
