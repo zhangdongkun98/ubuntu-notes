@@ -258,15 +258,16 @@ pip install yapf
 # 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, Git History, pylance, vscode-pdf
 # preference -> color scheme
 
-# sett
-# 打开settings.json文件
+## settings.json
 {
     "workbench.iconTheme": "vscode-icons",
     "python.pythonPath": "/usr/bin/python2.7",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "yapf",
-	"python.languageServer": "Pylance",
+    "python.languageServer": "Pylance",
+    "workbench.colorTheme": "Monokai",
+    "files.autoSave": "onFocusChange",
 }
 ```
 
@@ -301,3 +302,62 @@ sudo dpkg -i  teamviewer_13.2.26559_amd64.deb
 	vncserver-virtual -kill :88
 	vncserver-virtual :88
 	vncserver-virtual :88 -geometry 2240x1260
+
+
+
+
+# OwnCloud  (TODO)
+
+[install](https://www.tecmint.com/install-owncloud-on-ubuntu/)
+
+```bash
+sudo apt install apache2 libapache2-mod-php7.2 openssl php-imagick php7.2-common php7.2-curl php7.2-gd php7.2-imap php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-mysql php7.2-pgsql php-smbclient php-ssh2 php7.2-sqlite3 php7.2-xml php7.2-zip
+sudo dpkg -l apache2
+php -v
+
+sudo systemctl start apache2
+### check http://localhost/
+
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+
+sudo mysql -u root -p
+	CREATE DATABASE oc_db_name;
+	GRANT ALL ON oc_db_name.* TO 'oc_db_user'@'localhost' IDENTIFIED BY 'yourpassward';
+	FLUSH PRIVILEGES;
+	EXIT;
+
+sudo wget https://download.owncloud.org/community/owncloud-10.4.0.zip
+sudo unzip owncloud-10.4.0.zip -d /var/www/
+
+sudo chown -R www-data:www-data /var/www/owncloud/
+sudo chmod -R 755 /var/www/owncloud/
+
+sudo vim /etc/apache2/conf-available/owncloud.conf
+	Alias /owncloud "/var/www/owncloud/"
+
+	<Directory /var/www/owncloud/>
+	Options +FollowSymlinks
+	AllowOverride All
+
+	<IfModule mod_dav.c>
+	Dav off
+	</IfModule>
+
+	SetEnv HOME /var/www/owncloud
+	SetEnv HTTP_HOME /var/www/owncloud
+
+	</Directory>
+
+sudo a2enconf owncloud
+sudo a2enmod rewrite
+sudo a2enmod headers
+sudo a2enmod env
+sudo a2enmod dir
+sudo a2enmod mime
+
+sudo systemctl restart apache2
+
+### check http://localhost/owncloud/
+```
+

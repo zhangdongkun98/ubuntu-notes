@@ -9,11 +9,19 @@ sudo apt-get install -y apt-transport-https ca-certificates curl software-proper
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
+
+### for 18.04
+curl -O https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/containerd.io_1.4.3-1_amd64.deb
+sudo apt install ./containerd.io_1.4.3-1_amd64.deb
+
 sudo apt-get install -y docker-ce
 
 systemctl status docker
 sudo systemctl start docker
 sudo docker run hello-world
+
+sudo systemctl disable docker.service docker.socket
+
 ```
 
 
@@ -50,6 +58,28 @@ docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 [a bug](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
 	sudo chmod 666 /var/run/docker.sock
+
+## docker默认存储位置
+```bash
+sudo service docker stop
+sudo mv /var/lib/docker /media/ff/Gold/docker
+sudo ln -s /media/ff/Gold/docker /var/lib/docker
+sudo service docker start
+
+### or
+
+cat /etc/docker/daemon.json
+
+{
+   "graph": "/data/docker"
+}
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
+
+docker info | grep Root
+```
+
 
 ## docker源
 ```bash
@@ -89,7 +119,8 @@ cat /etc/docker/daemon.json
    `docker rmi 前面查询到的镜像id`
 10. stop停止镜像运行
     `docker stop id或者run命令所起的名字`
-
+11. 重启容器
+   `docker restart cid`
 
 
 # use cuda in docker
@@ -185,3 +216,13 @@ docker run -d --name wechat --device /dev/snd --ipc=host \
 bestwu/wechat
 ```
 
+### owncloud
+```bash
+docker pull owncloud
+docker pull mysql:5.7
+
+docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=密码 -d mysql:5.7
+docker run --name owncloud --link some-mysql:mysql -d owncloud:latest
+
+docker run -d -p 80:80 owncloud:latest
+```
