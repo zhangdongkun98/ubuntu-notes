@@ -1,11 +1,11 @@
-## cuda
+# cuda
 [addr1](https://blog.csdn.net/u014380165/article/details/77340765)
 
-#python
-##matplotlib
+# python
+## matplotlib
 [Python数据可视化matplotlib.pyplot](https://www.jianshu.com/p/85a01b7d6507)
 
-##Jupyter Notebook
+## Jupyter Notebook
 [安装与配置](https://blog.csdn.net/qq_42881421/article/details/88070832)
 
 	sudo apt-get update

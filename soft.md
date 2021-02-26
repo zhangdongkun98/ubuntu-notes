@@ -306,7 +306,7 @@ sudo dpkg -i  teamviewer_13.2.26559_amd64.deb
 
 
 
-# OwnCloud  (TODO)
+# OwnCloud
 
 [install](https://www.tecmint.com/install-owncloud-on-ubuntu/)
 

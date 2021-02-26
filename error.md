@@ -4,7 +4,3 @@
 	subl /etc/default/apport
 		enable=1 --> enable=0
 
-# python
-
-### pip install xxx 权限不够
-	pip install xxx --user

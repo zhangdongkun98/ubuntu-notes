@@ -31,3 +31,6 @@
 	rosdep update
 	rosdep install --from-paths src --ignore-src -r *#build* catkin_make
 
+
+
+conda install 'xerces-c=3.2'

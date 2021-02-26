@@ -1,7 +1,7 @@
-## 终端快捷方式
+# 终端快捷方式
 [addr](https://www.cnblogs.com/cobbliu/p/3629772.html)
 
-## Ubuntu全屏显示
+# 全屏显示
 [addr](https://blog.csdn.net/nuddlle/article/details/77994080)
 
 ```sh
@@ -11,7 +11,7 @@ reboot
 ```
 
 
-## 使用国内镜像服务器，解决apt-get、pip等安装工具下载依赖包速度慢的问题
+# 使用国内镜像服务器，解决apt-get、pip等安装工具下载依赖包速度慢的问题
 ```sh
 mkdir ~/.pip		# 如果不存在此文件夹，则创建之
 vim ~/.pip/pip.conf
@@ -42,7 +42,7 @@ sudo apt-get update
 
 
 
-# ubuntu 16.04科学上网
+# 科学上网
 ## SS
 [安装](https://zhoukay.top/2018/09/16/Ubuntu16-04%E9%85%8D%E7%BD%AEshadowsocks-qt5%E5%AE%A2%E6%88%B7%E7%AB%AF/)
 
@@ -84,9 +84,7 @@ sudo apt-get -f install libappindicator1 libindicator7
 见附件
 ```
 
-## AnyConnect  v2ray todo ....
-
-## proxychains-ng(proxychains4)
+## proxychains-ng (proxychains4)
 [addr](https://www.cnblogs.com/xuyaowen/p/proxychians4.html)
 
 ```bash
@@ -250,7 +248,7 @@ https://www.jianshu.com/p/f7f0c4792c75
 
 
 
-## Terminator
+# Terminator
 [blog](https://zhuanlan.zhihu.com/p/144711440)
 
 	sudo apt install terminator
@@ -336,7 +334,7 @@ esac
 
 
 
-## conda
+# conda
 
 
 
