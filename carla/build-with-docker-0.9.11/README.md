@@ -23,8 +23,8 @@ ue4-docker build 4.24.3 --no-engine --no-minimal
 ## 2. Build Carla
 **Note: check Content.tar.gz version.**
 ```bash
-docker build -t carla-prerequisites:0.9.11 -f dockerfile-0.9.11/Prerequisites.Dockerfile .
-docker build -t carla:0.9.11 -f dockerfile-0.9.11/Carla.Dockerfile .
+docker build -t carla-prerequisites:0.9.11 -f Prerequisites.Dockerfile .
+docker build -t carla:0.9.11 -f Carla.Dockerfile .
 
 docker run -it -u root carla:0.9.11 /bin/bash
     apt install vim-gtk
@@ -33,14 +33,13 @@ docker cp ~/carla_server/source/0.9.11/Content.tar.gz ${CONTAINER}:/home/ue4/car
     cd /home/ue4/
     rm -r carla
     git clone -b 0.9.11 https://github.com/carla-simulator/carla.git
-    chown -R ue4:ue4 .
     cd carla
     ### modify Update.sh
         function download_content {
             cp /home/ue4/carla_server/save/Content.tar.gz .
             mkdir -p Content
             tar -xvzf Content.tar.gz -C Content
-            # rm Content.tar.gz
+            rm Content.tar.gz
             mkdir -p "$CONTENT_FOLDER"
             mv Content/* "$CONTENT_FOLDER"
             rm -rf Content
@@ -52,6 +51,7 @@ docker cp ~/carla_server/source/0.9.11/Content.tar.gz ${CONTAINER}:/home/ue4/car
         copy_if_changed "./Unreal/CarlaUE4/Plugins/" "${DESTINATION}/Plugins/"
 
     ./Update.sh
+    chown -R ue4:ue4 .
 docker commit
 
 docker run -it -u ue4 carla:0.9.11 /bin/bash
@@ -96,7 +96,10 @@ docker build \
     -t carla:0.9.9.4 -f Carla.Dockerfile .
 docker build --network host -t carla:0.9.9.4 -f Carla.Dockerfile .
 docker run -it --network host -m 12g carla:0.9.9.4 /bin/bash
+docker run -it -u ue4 --env HTTP_PROXY="http://127.0.0.1:1080" --env HTTPS_PROXY="https://127.0.00.1:1080" --net host carla:0.9.9.4 /bin/bash
+docker run -it -u ue4 --net host carla:0.9.9.4 /bin/bash
 
-./docker_tools.py --input ~/Documents/test_roadrunner/Exports/ --output ~/Documents/output --packages your_map_name
+./docker_tools.py --input ~/Documents/test_roadrunner/Exports/ --output ~/Documents/output --packages map_package
 ```
+
 
