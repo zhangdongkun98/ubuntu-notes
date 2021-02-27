@@ -14,6 +14,8 @@ sudo apt-get update
 curl -O https://download.docker.com/linux/debian/dists/buster/pool/stable/amd64/containerd.io_1.4.3-1_amd64.deb
 sudo apt install ./containerd.io_1.4.3-1_amd64.deb
 
+apt-cache madison docker-ce
+
 sudo apt-get install -y docker-ce
 
 systemctl status docker
