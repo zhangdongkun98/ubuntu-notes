@@ -42,7 +42,7 @@ cd ~/UnrealEngine_4.22/Engine/Binaries/Linux && ./UE4Editor
 ```
 
 ```bash
-echo "export UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
+echo -e "\n\n\nexport UE4_ROOT=~/UnrealEngine_4.22" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -66,7 +66,7 @@ function download_content {
   cp ~/carla_server/save/Content.tar.gz .
   mkdir -p Content
   tar -xvzf Content.tar.gz -C Content
-  # rm Content.tar.gz
+  rm Content.tar.gz
   mkdir -p "$CONTENT_FOLDER"
   mv Content/* "$CONTENT_FOLDER"
   rm -rf Content
@@ -76,6 +76,7 @@ function download_content {
 ```
 
 ```bash
+./Update.sh
 make CarlaUE4Editor
 make PythonAPI
 make build.utils
@@ -119,4 +120,83 @@ cmake -G "Ninja" \
   -DBOOST_LIBRARYDIR="${BOOST_PATH}/lib" \
   ../${LIBOSMIUM_BASENAME}-source
 
+```
+
+
+
+# UE4.24, CARLA0.9.11
+## 0. Requirements
+```bash
+conda deactivate
+```
+
+```bash
+sudo apt-get update &&
+sudo apt-get install wget software-properties-common &&
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test &&
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - &&
+sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-8 main" &&
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install build-essential clang-8 lld-8 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&
+pip2 install --user setuptools &&
+pip3 install --user -Iv setuptools==47.3.1 &&
+pip2 install --user distro &&
+pip3 install --user distro
+```
+
+```bash
+sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/lib/llvm-8/bin/clang++ 180 &&
+sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-8/bin/clang 180
+```
+
+## 1. Build UE4
+```bash
+git clone --depth=1 -b 4.24 https://github.com/EpicGames/UnrealEngine.git ~/UnrealEngine_4.24
+
+cd ~/UnrealEngine_4.24
+
+wget https://carla-releases.s3.eu-west-3.amazonaws.com/Linux/UE_Patch/430667-13636743-patch.txt 430667-13636743-patch.txt
+patch --strip=4 < 430667-13636743-patch.txt
+
+./Setup.sh && ./GenerateProjectFiles.sh && make
+cd ~/UnrealEngine_4.24/Engine/Binaries/Linux && ./UE4Editor
+```
+
+```bash
+echo -e "\n\n\nexport UE4_ROOT=~/UnrealEngine_4.24" >> ~/.bashrc
+source ~/.bashrc
+```
+
+## 2. Build carla
+```bash
+git clone -b 0.9.11 https://github.com/carla-simulator/carla.git
+```
+
+修改  download_content
+```bash
+function download_content {
+  cp ~/carla_server/save/Content.tar.gz .
+  mkdir -p Content
+  tar -xvzf Content.tar.gz -C Content
+  rm Content.tar.gz
+  mkdir -p "$CONTENT_FOLDER"
+  mv Content/* "$CONTENT_FOLDER"
+  rm -rf Content
+  echo "$CONTENT_ID" > "$VERSION_FILE"
+  echo "Content updated successfully."
+}
+
+### modify Util/BuildTools/Package.sh Line 166
+    copy_if_changed "./Unreal/CarlaUE4/Plugins/" "${DESTINATION}/Plugins/"
+```
+
+```bash
+./Update.sh
+make CarlaUE4Editor &&
+make PythonAPI &&
+make build.utils &&
+make package
 ```
