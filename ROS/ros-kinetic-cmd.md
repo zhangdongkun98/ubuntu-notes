@@ -1,4 +1,4 @@
-## ROS安装
+## 安装
 [addr](https://blog.csdn.net/tq08g2z/article/details/79209435)
 
 ```bash

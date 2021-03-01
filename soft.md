@@ -262,12 +262,13 @@ pip install yapf
 {
     "workbench.iconTheme": "vscode-icons",
     "python.pythonPath": "/usr/bin/python2.7",
-    "python.linting.pylintEnabled": false,
-    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
     "python.formatting.provider": "yapf",
     "python.languageServer": "Pylance",
     "workbench.colorTheme": "Monokai",
     "files.autoSave": "onFocusChange",
+    "terminal.integrated.inheritEnv": false,
 }
 ```
 
