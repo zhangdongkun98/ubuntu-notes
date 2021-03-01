@@ -1,16 +1,16 @@
-¹ØÓÚ²Î¿¼¹ÅÔÂ¡¶ROSÌ½Ë÷×Ü½á£¨Îå£©¡ª¡ª´´½¨¼òµ¥µÄ»úÆ÷ÈËÄ£ĞÍsmartcar¡·ÔÚkineticÖĞÊµÏÖ×Ü½á
+ï¿½ï¿½ï¿½Ú²Î¿ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ROSÌ½ï¿½ï¿½ï¿½Ü½á£¨ï¿½å£©ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½òµ¥µÄ»ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½smartcarï¿½ï¿½ï¿½ï¿½kineticï¿½ï¿½Êµï¿½ï¿½ï¿½Ü½ï¿½
 	https://blog.csdn.net/ds1234/article/details/78617273?utm_source=blogxgwz0
 
-ROSÑ§Ï°¡ª¡ªURDFÎÄ¼ş½âÎö
+ROSÑ§Ï°ï¿½ï¿½ï¿½ï¿½URDFï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	https://blog.csdn.net/Kalenee/article/details/86485565
 
-¡¾Ì½Ë÷Ö®Â·¡¿»úÆ÷ÈËÆª(5)-GazeboÎïÀí·ÂÕæ»·¾³´î½¨_ÈÃ»úÆ÷ÈËÔË¶¯ÆğÀ´
+ï¿½ï¿½Ì½ï¿½ï¿½Ö®Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æª(5)-Gazeboï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ»·ï¿½ï¿½ï¿½î½¨_ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½
 	https://www.cnblogs.com/ynxf/p/9655596.html
 
 ROS No transform from [sth] to [sth]
 	https://blog.csdn.net/hitgavin/article/details/51997379
 
-½â¾ö Controller spawner couldn't find the expected controller_manager ros interface
+ï¿½ï¿½ï¿½ Controller spawner couldn't find the expected controller_manager ros interface
 	https://blog.csdn.net/subiluo/article/details/81004382
 
 gazebo_ros_control plugin: GazeboRosControlPlugin missing <legacyModeNS> DefaultRobotHWSim
@@ -19,36 +19,36 @@ gazebo_ros_control plugin: GazeboRosControlPlugin missing <legacyModeNS> Default
 
 
 
-Îª´®Áª»úĞµ±ÛĞ´Ò»¸öROS¿ØÖÆÆ÷
+Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½Ğ´Ò»ï¿½ï¿½ROSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	https://blog.csdn.net/wxflamy/article/details/79266726
 
-ros_control ÈçºÎĞ´Ò»¸öcontroller
+ros_control ï¿½ï¿½ï¿½Ğ´Ò»ï¿½ï¿½controller
 	https://blog.csdn.net/xunshanzuanfeng/article/details/53968028
 
-ros¿Õ¼äÖĞÖ»±àÒëÌØ¶¨Èí¼ş°üµÄ·½·¨
+rosï¿½Õ¼ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Ø¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
 	https://blog.csdn.net/u010925447/article/details/81223856
 
-¡¾ROSÑ§Ï°¡¿£¨Îå£©ROSÏûÏ¢´«µİ¡ª¡ª×Ô¶¨ÒåÏûÏ¢
+ï¿½ï¿½ROSÑ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½å£©ROSï¿½ï¿½Ï¢ï¿½ï¿½ï¿½İ¡ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	https://blog.csdn.net/wengge987/article/details/50619294
 
-ROSÑ§Ï°Ö®Â·04£º±àĞ´»ùÓÚ×Ô¶¨ÒåÏûÏ¢(.msg)½øĞĞÍ¨ĞÅµÄ½Úµã
+ROSÑ§Ï°Ö®Â·04ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢(.msg)ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ÅµÄ½Úµï¿½
 	https://blog.csdn.net/l1216766050/article/details/79551498
 
-RosÖĞ´´½¨msgºÍsrvÓöµ½µÄÎÊÌâ
+Rosï¿½Ğ´ï¿½ï¿½ï¿½msgï¿½ï¿½srvï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	https://blog.csdn.net/weixin_40712763/article/details/78905454
 
-ROS×Ô¶¨ÒåmsgÀàĞÍÒÔ¼°Ê¹ÓÃ
+ROSï¿½Ô¶ï¿½ï¿½ï¿½msgï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ê¹ï¿½ï¿½
 	https://blog.csdn.net/u012319441/article/details/78309781
 
-ROS±Ê¼Ç£ºÒıÓÃÍ¬Ò»¹¤×÷¿Õ¼äÏÂÆäËû°üÖĞµÄ .h ÎÄ¼ş
+ROSï¿½Ê¼Ç£ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ .h ï¿½Ä¼ï¿½
 	https://blog.csdn.net/weixin_43651761/article/details/85557291
 
 
 
-ROS±¨´í´¦Àí(³ÖĞø¸üĞÂ)
-        ÔËĞĞlaunchÎÄ¼şÊ±±¨´í
+ROSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
+        ï¿½ï¿½ï¿½ï¿½launchï¿½Ä¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½
 	https://blog.csdn.net/li528405176/article/details/81941338
-        ROS ±àÒë³ö´í error: ¡®shared_ptr¡¯ in namespace ¡®std¡¯ does not name a template type
+        ROS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ error: ï¿½ï¿½shared_ptrï¿½ï¿½ in namespace ï¿½ï¿½stdï¿½ï¿½ does not name a template type
 	https://blog.csdn.net/weixin_42268975/article/details/80734537
 
 
@@ -57,20 +57,20 @@ ROS±¨´í´¦Àí(³ÖĞø¸üĞÂ)
 
 
 
-ÓÃ£Ò£Ï£ÓÖÆ×÷ÎÒÃÇµÄ»úÆ÷ÈËĞ¡³µ£¨Ò»£©£º URDF¼ò½é
+ï¿½Ã£Ò£Ï£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ»ï¿½ï¿½ï¿½ï¿½ï¿½Ğ¡ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ URDFï¿½ï¿½ï¿½
         xacro×ªurdf
 	rosrun xacro xacro.py 04_xacro.xacro > 04_xacro.urdf
 	https://blog.csdn.net/sujun3304/article/details/18962719
 
-graphvizÔÚubuntuÏÂ°²×°Ê¹ÓÃ¼òµ¥±¸Íü
+graphvizï¿½ï¿½ubuntuï¿½Â°ï¿½×°Ê¹ï¿½Ã¼òµ¥±ï¿½ï¿½ï¿½
 	https://blog.csdn.net/robin_xu_shuai/article/details/53355711
 
 Maybe useful
-ROSÓëMatlabÏµÁĞ£ºÒ»¸ö¼òµ¥µÄÔË¶¯¿ØÖÆ
+ROSï¿½ï¿½MatlabÏµï¿½Ğ£ï¿½Ò»ï¿½ï¿½ï¿½òµ¥µï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½ï¿½
 	https://www.cnblogs.com/yrm1160029237/p/9923694.html
 
-MATLABÓëROS¿ªÊ¼£¨3£©---PR2»úÆ÷ÈËÔË¶¯¿ØÖÆ£¨·­Òë£©
+MATLABï¿½ï¿½ROSï¿½ï¿½Ê¼ï¿½ï¿½3ï¿½ï¿½---PR2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¶ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ë£©
 	https://blog.csdn.net/weixin_39090239/article/details/84378770
 
-ROSËÙ³ÉÖ®·¢ËÍ&½ÓÊÕÏûÏ¢
+ROSï¿½Ù³ï¿½Ö®ï¿½ï¿½ï¿½ï¿½&ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
 	https://blog.csdn.net/foreverhehe716/article/details/83055323
