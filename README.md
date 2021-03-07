@@ -25,6 +25,9 @@ alias gpu='watch -n 0.3 nvidia-smi'
 alias wechat='bash ~/opt/wechat.sh'
 alias tb='tensorboard --logdir=. --reload_interval=0.5 --max_reload_threads=8'
 alias docker='sudo docker'
+alias condaa='conda activate'
+alias condad='conda deactivate'
+alias opn='code ~/github/zdk/ubuntu-notes'
 ```
 
 

@@ -205,7 +205,7 @@ docker run -it --rm  carla:latest /bin/bash
 xhost +
 docker pull bestwu/wechat
 
-docker run -d --name wechat --device /dev/snd --ipc=host \
+sudo docker run -d --name wechat --device /dev/snd --ipc=host \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -v $HOME/WeChatFiles:/WeChatFiles \
 -e DISPLAY=unix$DISPLAY \
