@@ -82,3 +82,9 @@ df -hl
         route add -net 10.0.0.0/8 gw 10.12.120.1
 	reboot
 
+
+# 声卡
+
+```bash
+sudo apt install pavucontrol
+```

@@ -255,7 +255,7 @@ sudo apt-get install -f
 
 # pip install flake8
 pip install yapf
-# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, Git History, pylance, vscode-pdf
+# 插件：vscode-icons, python, Bracket Pair Colorizer, Better Comments, Markdown All in One, Path Intellisense, Git Lens, Git History, pylance, vscode-pdf, yaml
 # preference -> color scheme
 
 ## settings.json
