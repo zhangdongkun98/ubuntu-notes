@@ -287,7 +287,7 @@ https://www.jianshu.com/p/f7f0c4792c75
     background_darkness = 0.92
     background_image = None
     background_type = transparent
-    font = Ubuntu Mono 14
+    font = Ubuntu Mono 10
     foreground_color = "#f9fbf8"
     scroll_on_output = False
     scrollback_lines = 500000
@@ -342,4 +342,10 @@ esac
 sh Miniconda3-latest-Linux-x86_64.sh -b
 ~/miniconda3/bin/conda init
 conda create --name d2l python=3.7.7 -y
+```
+
+
+# MP4
+```bash
+sudo apt-get install ubuntu-restricted-extras
 ```

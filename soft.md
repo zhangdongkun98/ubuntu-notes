@@ -163,7 +163,11 @@ sudo ln -s python3.5 /usr/bin/python3
 
 ## 安装
 ```sh
+### for 18.04
+sudo apt-get install sni-qt
+
 sudo apt-get install synergy
+### 在 Synergy的设置中取消勾选使用 SSL
 dpkg -l synergy  # 查看版本
 # win安装包见附件
 ```
@@ -262,10 +266,11 @@ pip install yapf
 {
     "workbench.iconTheme": "vscode-icons",
     "python.pythonPath": "/usr/bin/python2.7",
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": false,
     "python.formatting.provider": "yapf",
     "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": false,
     "workbench.colorTheme": "Monokai",
     "files.autoSave": "onFocusChange",
     "terminal.integrated.inheritEnv": false,
