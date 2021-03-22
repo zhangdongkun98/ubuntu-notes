@@ -70,6 +70,11 @@ df -hl
 
 	make clean  ## if rebuild
 
+	### for 18.04
+	chmod +x dkms-install.sh
+	sudo ./dkms-install.sh
+	sudo modprobe 8821cu
+
 
 ## 双网卡上网
 

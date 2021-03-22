@@ -374,3 +374,10 @@ sudo systemctl restart apache2
 
 ```
 
+
+# StarDict
+[blog](https://www.ubuntubuzz.com/2018/05/ubuntu-1804-install-stardict-and-add-dictionary-files.html)
+```bash
+sudo apt install stardict
+sudo mv -v stardict-langdao-* /usr/share/stardict/dic/
+```

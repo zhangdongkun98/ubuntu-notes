@@ -349,3 +349,10 @@ conda create --name d2l python=3.7.7 -y
 ```bash
 sudo apt-get install ubuntu-restricted-extras
 ```
+
+# FTP
+[maybe useful](https://devanswers.co/installing-ftp-server-vsftpd-ubuntu-18-04/)
+```bash
+sudo apt install vsftpd
+sudo systemctl status vsftpd
+```
