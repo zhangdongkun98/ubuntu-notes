@@ -64,3 +64,28 @@ unset SESSION_MANAGER
 unset DBUS_SESSION_BUS_ADDRESS
 exec startxfce4
 ```
+
+
+## TigerVNC
+[install deb](http://tigervnc.bphinz.com/nightly/)
+```bash
+vncserver :3 -localhost no -geometry 2240x1260 -depth 32
+vncserver -kill :3
+```
+
+
+
+# VNC BK
+
+	sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+	sudo apt-get install gnome-core
+	
+	sudo apt install xfce4 xfce4-goodies tightvncserver
+	
+	vncserver-virtual -kill :88
+	vncserver-virtual :88
+	vncserver-virtual :88 -geometry 2240x1260
+
+
+
+

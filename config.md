@@ -356,3 +356,16 @@ sudo apt-get install ubuntu-restricted-extras
 sudo apt install vsftpd
 sudo systemctl status vsftpd
 ```
+
+# 中文乱码 (18.04)
+[blog](http://www.jrjxdiy.com/linux/ubuntu-18-04-the-solution-of-displaying-messy-code-in-chinese-for-txt-file.html)
+
+```bash
+dconf-editor
+
+# 展开org/gnome/gedit/preferences/encodings/candidate-encodings
+# Use Default value 关闭
+# Custom value 增加['UTF-8', 'GB18030', 'GB2312', 'GBK', 'BIG5', 'CURRENT', 'UTF-16']
+
+# 系统设置内添加中文语言
+```

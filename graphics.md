@@ -17,15 +17,18 @@ cudnn-11.1-linux-x64-v8.0.4.30.tgz/8.0.5.39
 ```
 
 # NVIDIA驱动
-[安装](https://blog.csdn.net/wsp_1138886114/article/details/89406911)
-
-```sh
+```bash
 sudo gedit /etc/modprobe.d/blacklist.conf
 	blacklist nouveau
 	options nouveau modeset=0
 sudo update-initramfs -u
 lsmod | grep nouveau
+```
 
+## option 1 (deprecated)
+[安装](https://blog.csdn.net/wsp_1138886114/article/details/89406911)
+
+```sh
 官网https://www.geforce.cn/drivers下载对应版本，下载至home目录下（目录自定义，但是不要有中文）（尽量新，避免循环登录问题）（见附件）
 按ctrl+alt+f1进入命令行界面(ctrl+alt+f7返回桌面)，登录
 sudo service lightdm stop      //这个是关闭图形界面，不执行会出错。
@@ -42,6 +45,7 @@ modprobe nvidia    // 挂载
 nvidia-smi
 ```
 
+## option 2
 [安装](https://www.jianshu.com/p/d45434f28ca0)
 	
 ```sh
@@ -60,11 +64,11 @@ sudo apt install nvidia-430
 
 # CUDA
 ## cuda10.1
-[document](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
-[doc](https://docs.nvidia.com/cuda/archive/10.1/)
-[Linux安装CUDA的正确姿势](https://blog.csdn.net/wf19930209/article/details/81879514)
-[Ubuntu 16.04 安装 CUDA10.1 （解决循环登陆的问题）](https://www.cnblogs.com/dinghongkai/p/11268976.html)
-[Setting up Ubuntu 16.04 + CUDA + GPU for deep learning with Python](https://www.pyimagesearch.com/2017/09/27/setting-up-ubuntu-16-04-cuda-gpu-for-deep-learning-with-python/)
+[document](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html) <br>
+[doc](https://docs.nvidia.com/cuda/archive/10.1/) <br>
+[Linux安装CUDA的正确姿势](https://blog.csdn.net/wf19930209/article/details/81879514) <br>
+[Ubuntu 16.04 安装 CUDA10.1 （解决循环登陆的问题）](https://www.cnblogs.com/dinghongkai/p/11268976.html) <br>
+[Setting up Ubuntu 16.04 + CUDA + GPU for deep learning with Python](https://www.pyimagesearch.com/2017/09/27/setting-up-ubuntu-16-04-cuda-gpu-for-deep-learning-with-python/) <br>
 
 ```bash
 # ctr + alt + F1 进入tty1，禁止X server
