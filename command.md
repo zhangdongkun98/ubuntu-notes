@@ -54,6 +54,7 @@ find . -name '*.zip' -exec unzip -n -d /target/dir {} \;
 
 ## git
 
+### breate new repo
 ```bash
 # create a new repository on the command line
 echo "# d2l-en" >> README.md
@@ -64,6 +65,14 @@ git branch -M master
 git remote add origin https://github.com/yiran98/d2l-en.git
 git push -u origin master
 ```
+
+### pull all branches
+```bash
+git branch -r | grep -v '\->' | while read remote; do git branch --track "${remote#origin/}" "$remote"; done
+git fetch --all
+git pull --all
+```
+
 
 ## git加速
 
@@ -95,3 +104,10 @@ git push origin master
 
     lsof -i:port
     lsof -i
+
+
+## gpu
+```bash
+git clone https://github.com/peci1/nvidia-htop.git
+./nvidia-htop.py
+```

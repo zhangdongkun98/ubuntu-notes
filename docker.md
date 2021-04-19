@@ -201,6 +201,7 @@ docker run -it --rm  carla:latest /bin/bash
 
 # 应用
 ### 微信
+[手把手教你在Ubuntu 20.04上通过docker安装微信和QQ](https://zhuanlan.zhihu.com/p/323723229)
 ```bash
 xhost +
 docker pull bestwu/wechat

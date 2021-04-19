@@ -3,7 +3,7 @@
 
 [Ubuntu18.04 LTS 安装 VNC Server](https://blog.csdn.net/yidichaxiang/article/details/96429007)
 [Ubuntu18.04 LTS 安装 VNC Server[x11vnc,tightvncserver,vnc4server]](https://blog.csdn.net/yidichaxiang/article/details/100533237#commentBox)
-
+[Installation of VNC server on Ubuntu](https://zhuanlan.zhihu.com/p/162086445)
 
 sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
 sudo apt install tigervnc-standalone-server tigervnc-common

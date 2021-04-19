@@ -154,3 +154,15 @@ sudo make
 ./conv_sample
 ```
 
+
+
+# Bugs
+
+### Unable to determine the device handle for GPU 0000:05:00.0: GPU is lost. Reboot the system
+
+[csdn](https://blog.csdn.net/qq_34361099/article/details/108052465)
+[torch](https://discuss.pytorch.org/t/one-gpu-lost-how-to-train-on-another-without-reboot/53180)
+[to validate](https://www.cyberciti.biz/faq/debian-ubuntu-rhel-fedora-linux-nvidia-nvrm-gpu-fallen-off-bus/)
+[GPU is lost during execution of either Tensorflow or Theano code](https://stackoverflow.com/questions/45891934/gpu-is-lost-during-execution-of-either-tensorflow-or-theano-code)
+
+大概率硬件原因
