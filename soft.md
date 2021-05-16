@@ -366,3 +366,15 @@ sudo systemctl restart apache2
 sudo apt install stardict
 sudo mv -v stardict-langdao-* /usr/share/stardict/dic/
 ```
+
+
+# BitTorrent
+
+[ask](https://askubuntu.com/questions/861023/how-do-you-get-bittorrent-on-ubuntu)
+
+```bash
+sudo add-apt-repository ppa:qbittorrent-team/qbittorrent-stable
+sudo apt update
+sudo apt install qbittorrent
+```
+
