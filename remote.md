@@ -5,6 +5,7 @@
 [Ubuntu18.04 LTS 安装 VNC Server[x11vnc,tightvncserver,vnc4server]](https://blog.csdn.net/yidichaxiang/article/details/100533237#commentBox)
 [Installation of VNC server on Ubuntu](https://zhuanlan.zhihu.com/p/162086445)
 
+```bash
 sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
 sudo apt install tigervnc-standalone-server tigervnc-common
 
@@ -13,10 +14,10 @@ sudo apt install tigervnc-standalone-server tigervnc-common tigervnc-xorg-extens
 sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
 sudo apt-get install --no-install-recommends ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal gnome-core
 
-
-
 netstat -anp
 netstat -tulpn
+
+```
 
 
 ```bash
@@ -24,14 +25,14 @@ netstat -tulpn
 tigervncserver_1.7.0-1ubuntu1_amd64.deb
 ```
 
-
+```bash
 sudo apt-get purge realvnc-vnc-server
 sudo apt-get purge realvnc-vnc-viewer
 
 
 vncserver -geometry 2560x1440 -depth 32
 ssh zdk@10.12.120.46 -L 5901:127.0.0.1:5901
-
+```
 
 ## ~/.vnc/xstartup
 ```bash
@@ -68,11 +69,20 @@ exec startxfce4
 
 ## TigerVNC
 [install deb](http://tigervnc.bphinz.com/nightly/)
+[github](https://github.com/TigerVNC/tigervnc/releases)
+
+- For 18.04, use tigervncserver_1.11.80+20210518git2a042c91-1ubuntu1_amd64.deb
 ```bash
 vncserver :3 -localhost no -geometry 2240x1260 -depth 32
 vncserver -kill :3
 ```
 
+
+### realvnc （图形界面）
+
+[vnc server](https://www.realvnc.com/en/connect/download/vnc/)
+[vnc viewer](https://www.realvnc.com/en/connect/download/viewer/)
+[blog](https://blog.csdn.net/yidichaxiang/article/details/96429007)
 
 
 # VNC BK
