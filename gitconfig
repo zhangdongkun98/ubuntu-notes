@@ -1,13 +1,14 @@
 [http]
-    proxy = socks5://127.0.0.1:1080
+	proxy = socks5://127.0.0.1:1080
 [https]
-    proxy = socks5://127.0.0.1:1080
+	proxy = socks5://127.0.0.1:1080
 [http "https://github.com"]
-    proxy = socks5://127.0.0.1:1080
+	proxy = socks5://127.0.0.1:1080
 
 [user]
-    name = zhangdongkun98
-    email = zhangdongkun98@gmail.com
+	name = zhangdongkun98
+	email = zhangdongkun98@gmail.com
 [credential]
-    helper = store
-
+	helper = store
+[core]
+	quotepath = false
