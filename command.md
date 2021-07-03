@@ -84,6 +84,7 @@ subl /etc/hosts
 ## git-lfs
 
 [doc](https://git-lfs.github.com/)
+[package](https://github.com/git-lfs/git-lfs/releases)
 [安装](https://blog.csdn.net/anlian523/article/details/100520039)
 
 
