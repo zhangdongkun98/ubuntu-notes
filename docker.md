@@ -101,6 +101,23 @@ cat /etc/docker/daemon.json
 
 
 
+## 用户加入docker组
+
+```bash
+sudo groupadd docker
+
+# 应用用户加入docker用户组
+sudo usermod -aG docker ${USER}
+
+# 重启docker服务
+sudo systemctl restart docker
+
+# 切换或者退出当前账户再从新登入
+su root             # 切换到root用户
+su ${USER}          # 再切换到原来的应用用户以上配置才生效
+```
+
+
 1. 查看所有正在运行容器
    `docker ps`
 2. 查看所有容器
