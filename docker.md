@@ -26,8 +26,24 @@ sudo systemctl disable docker.service docker.socket
 
 ```
 
+### 用户加入docker组
 
-安装 nvidia-docker
+```bash
+sudo groupadd docker
+
+# 应用用户加入docker用户组
+sudo usermod -aG docker ${USER}
+
+# 重启docker服务
+sudo systemctl restart docker
+
+# 切换或者退出当前账户再从新登入
+su root             # 切换到root用户
+su ${USER}          # 再切换到原来的应用用户以上配置才生效
+```
+
+
+### 安装 nvidia-docker (deprecated)
 ```bash
 # 清理以前的。If you have nvidia-docker 1.0 installed: we need to remove it and all existing GPU containers
 sudo docker volume ls -q -f driver=nvidia-docker | xargs -r -I{} -n1 docker ps -q -a -f volume={} | xargs -r docker rm -f
@@ -56,6 +72,23 @@ docker run -v /usr/local/nvidia//:/usr/local/nvidia -it --rm --gpus all nvidia/c
 docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 ```
 
+### 安装 nvidia-docker2
+
+https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
+
+```bash
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+
+docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+
+```
+
+### A bug (deprecated)
 
 [a bug](https://www.digitalocean.com/community/questions/how-to-fix-docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket)
 
@@ -101,21 +134,6 @@ cat /etc/docker/daemon.json
 
 
 
-## 用户加入docker组
-
-```bash
-sudo groupadd docker
-
-# 应用用户加入docker用户组
-sudo usermod -aG docker ${USER}
-
-# 重启docker服务
-sudo systemctl restart docker
-
-# 切换或者退出当前账户再从新登入
-su root             # 切换到root用户
-su ${USER}          # 再切换到原来的应用用户以上配置才生效
-```
 
 
 1. 查看所有正在运行容器
