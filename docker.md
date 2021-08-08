@@ -26,6 +26,14 @@ sudo systemctl disable docker.service docker.socket
 
 ```
 
+### for mac
+
+[Mac下安装docker的三种方法](https://zhuanlan.zhihu.com/p/91116621)
+
+https://hub.docker.com/editions/community/docker-ce-desktop-mac
+
+
+
 ### 用户加入docker组
 
 ```bash
