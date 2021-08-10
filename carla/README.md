@@ -3,6 +3,8 @@
 
 # Unknown
 
+[Alternative way of running CARLA off-screen choosing GPU](https://github.com/carla-simulator/carla/issues/225)
+
 [远程服务器调用Carla并用VirtualGL渲染Pygame](https://zhuanlan.zhihu.com/p/375707775)
 [UE4 initialization issue with VirtualGL](https://github.com/carla-simulator/carla/issues/3423)
 [include xdg-user-dirs xdg-utils packages in the Docker image](https://github.com/carla-simulator/carla/issues/3514)
