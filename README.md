@@ -61,3 +61,15 @@ sudo apt install ultra-flat-icons
 
 unity-tweak-tool
 ```
+
+
+## default config (mac)
+
+```bash
+chsh -s /bin/bash
+```
+
+```bash
+### install vscode
+### 打开VSCode –> command+shift+p –> 输入shell command –> 点击提示Shell Command: Install ‘code’ command in PATH运行
+```
