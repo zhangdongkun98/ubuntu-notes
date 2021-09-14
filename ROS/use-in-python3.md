@@ -33,21 +33,27 @@ cd rospkg/
 python setup.py install
  
 # 安装sip
-cd ..
+cd ~/miniconda3/envs/ros_demo/pycode
 # 下载地址 https://riverbankcomputing.com/software/sip/download
+wget https://www.riverbankcomputing.com/static/Downloads/sip/4.19.25/sip-4.19.25.tar.gz
+tar zxvf sip-4.19.25.tar.gz
 cd sip-4.19.25
 python configure.py
 make
 make install
 
 # 安装orocos_kinematics_dynamics
+cd ~/miniconda3/envs/ros_demo/pycode
 ### https://github.com/orocos/orocos_kinematics_dynamics/releases/tag/v1.4.0
 ### reference: https://github.com/orocos/orocos_kinematics_dynamics/blob/master/orocos_kdl/INSTALL.md
+wget https://github.com/orocos/orocos_kinematics_dynamics/archive/refs/tags/v1.4.0.tar.gz
+mv v1.4.0.tar.gz orocos_kinematics_dynamics-1.4.0.tar.gz
+tar zxvf orocos_kinematics_dynamics-1.4.0.tar.gz
 cd orocos_kinematics_dynamics-1.4.0/orocos_kdl
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=~/miniconda3/envs/ros_demo
 make
-sudo make install
+make install
 ### to uninstall: cat install_manifest.txt | sudo xargs rm
 ```
 
