@@ -37,6 +37,9 @@ alias gd='git diff'
 
 
 ## default config (18.04)
+
+- 选择minimal installation
+
 ```bash
 sudo apt remove update-notifier
 sudo apt install gnome-tweak-tool

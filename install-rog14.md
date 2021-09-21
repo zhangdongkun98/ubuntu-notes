@@ -28,7 +28,7 @@ sudo make install
 
 ```bash
 ### 进入 /usr/share/X11/xorg.conf.d/10-nvidia.conf， 添加
-Option "PrimaryGPU" "No"
+    Option "PrimaryGPU" "No"
 
 update-grub
 ```
