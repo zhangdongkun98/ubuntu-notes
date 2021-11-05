@@ -66,7 +66,7 @@ df -hl
 	sudo modprobe 8821cu
 	lsusb （用于查看网卡，得到的结果里应该有0bda:1a2b）
 	sudo usb_modeswitch -KW -v 0bda -p 1a2b
-	systemctl start bluetooth.service
+	sudo systemctl start bluetooth.service
 
 	make clean  ## if rebuild
 

@@ -378,3 +378,101 @@ sudo apt update
 sudo apt install qbittorrent
 ```
 
+
+
+# Latex
+
+[Ubuntu 使用 Latex，使用VS Code 中文](https://zhuanlan.zhihu.com/p/65931654)
+
+```bash
+
+sudo apt-get install texlive-latex-base
+sudo apt-get install latex-cjk-all
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texmaker
+sudo apt-get install texlive-xetex
+sudo apt-get install texlive-publishers
+
+```
+
+安装插件Latex Workshop
+
+打开设置，搜索latex-workshop.latex.recipes
+
+点击Edit in settings.json 写入
+
+```json
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex->bibtex->exlatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools":[
+        {
+            "name":"xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name":"bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+    ],
+
+```
+
+
+
+# HydraPaper
+
+[如何在 Linux 中为每个屏幕设置不同的壁纸](https://zhuanlan.zhihu.com/p/51426910) <br>
+[壁纸工具](https://flathub.org/apps/details/org.gabmus.hydrapaper)
+
+
+```bash
+sudo apt install flatpak
+flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gabmus.hydrapaper
+flatpak run org.gabmus.hydrapaper
+```
+
