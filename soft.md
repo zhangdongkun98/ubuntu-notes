@@ -100,8 +100,9 @@ sudo ln -s python3.5 /usr/bin/python3
 ```
 
 # 视频编辑器
-	sudo apt install kdenlive
-
+```bash
+sudo apt install kdenlive
+```
 
 # Pycharm
 [安装](https://www.jianshu.com/p/441d31600647)
