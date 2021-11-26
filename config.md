@@ -359,3 +359,18 @@ dconf-editor
 
 # 系统设置内添加中文语言
 ```
+
+
+
+
+# tmux
+
+```bash
+sudo apt install tmux
+
+cd
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+```
+

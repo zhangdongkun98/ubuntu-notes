@@ -1,5 +1,7 @@
 # Install
 
+### 1. for ubuntu
+
 [blog](https://blog.csdn.net/jinking01/article/details/82490688)
 
 ```bash
@@ -21,12 +23,9 @@ sudo apt-get install -y docker-ce
 systemctl status docker
 sudo systemctl start docker
 sudo docker run hello-world
-
-sudo systemctl disable docker.service docker.socket
-
 ```
 
-### for mac
+### 1. for mac
 
 [Mac下安装docker的三种方法](https://zhuanlan.zhihu.com/p/91116621)
 
@@ -34,7 +33,7 @@ https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
 
 
-### 用户加入docker组
+### 2. 用户加入docker组
 
 ```bash
 sudo groupadd docker
@@ -80,7 +79,7 @@ docker run -v /usr/local/nvidia//:/usr/local/nvidia -it --rm --gpus all nvidia/c
 docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
 ```
 
-### 安装 nvidia-docker2
+### 3. 安装 nvidia-docker2
 
 https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html
 
@@ -102,7 +101,7 @@ docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 
 	sudo chmod 666 /var/run/docker.sock
 
-## docker默认存储位置
+# docker默认存储位置
 ```bash
 sudo service docker stop
 sudo mv /var/lib/docker /media/ff/Gold/docker
@@ -124,7 +123,7 @@ docker info | grep Root
 ```
 
 
-## docker源
+# docker源 (todo)
 ```bash
 cat /etc/docker/daemon.json
 
@@ -141,7 +140,16 @@ cat /etc/docker/daemon.json
 [proxy](https://note.qidong.name/2020/05/docker-proxy/)
 
 
+# use cuda in docker
 
+```bash
+apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+git clone https://gitlab.com/nvidia/container-images/cuda.git
+```
+
+
+
+# 常用命令 (todo)
 
 
 1. 查看所有正在运行容器
@@ -168,18 +176,11 @@ cat /etc/docker/daemon.json
    `docker restart cid`
 
 
-# use cuda in docker
-
 ```bash
-apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-
-git clone https://gitlab.com/nvidia/container-images/cuda.git
-
+sudo systemctl disable docker.service docker.socket
 ```
 
-
-
-# 删除容器
+### 删除容器
 
 可以使用 `docker container rm` 来删除一个处于终止状态的容器。例如
 
@@ -192,7 +193,7 @@ trusting_newton
 
 如果要删除一个运行中的容器，可以添加 `-f` 参数。Docker 会发送 `SIGKILL` 信号给容器。
 
-# 清理所有处于终止状态的容器
+### 清理所有处于终止状态的容器
 
 用 `docker container ls -a` 命令可以查看所有已经创建的包括终止状态的容器，如果数量太多要一个个删除可能会很麻烦，用下面的命令可以清理掉所有处于终止状态的容器。
 
@@ -229,12 +230,9 @@ eg:将主机/www/runoob目录拷贝到容器96f7f14e99ab中，目录重命名为
 docker cp /www/runoob 96f7f14e99ab:/www
 ```
 
-
-
-
-
+```bash
 docker run -it --rm  carla:latest /bin/bash
-
+```
 
 
 
@@ -249,13 +247,13 @@ docker run -it --rm  carla:latest /bin/bash
 xhost +
 docker pull bestwu/wechat
 
-sudo docker run -d --name wechat --device /dev/snd --ipc=host \
+docker run -d --name wechat --device /dev/snd --ipc=host \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -v $HOME/WeChatFiles:/WeChatFiles \
 -e DISPLAY=unix$DISPLAY \
--e XMODIFIERS=@im=ibus \
--e QT_IM_MODULE=ibus \
--e GTK_IM_MODULE=ibus \
+-e XMODIFIERS=@im=fcitx \
+-e QT_IM_MODULE=fcitx \
+-e GTK_IM_MODULE=fcitx \
 -e AUDIO_GID=`getent group audio | cut -d: -f3` \
 -e GID=`id -g` \
 -e UID=`id -u` \
