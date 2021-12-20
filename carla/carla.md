@@ -8,16 +8,6 @@
 
 
 
-## 安装
-寻找硬盘中的附件
-
-	NVIDIA驱动，在右上角设备中查看 图形，若与显卡型号一致则正常
-	
-	技巧：翻墙；利用服务器git clone，然后scp到本地
-	
-	Update.sh修改  
-
-
 
 ## ROS bridge
 	#setup folder structure*

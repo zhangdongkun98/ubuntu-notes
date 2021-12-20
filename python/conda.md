@@ -9,3 +9,6 @@ conda create --name d2l python=3.7.7 -y
 ```
 
 
+```bash
+conda remove -n xxx --all
+```

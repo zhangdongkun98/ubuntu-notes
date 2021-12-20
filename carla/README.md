@@ -1,6 +1,16 @@
 
 
 
+
+# Build Map
+
+```bash
+python docker_tools.py --image carla:0.9.11 --input ~/Documents/roadrunner_projects/round_v0/Exports/ --output ~/Documents/maps/round_v0/ --packages PkgeName1,PkgeName2
+```
+
+
+
+
 # Unknown
 
 [Alternative way of running CARLA off-screen choosing GPU](https://github.com/carla-simulator/carla/issues/225)
