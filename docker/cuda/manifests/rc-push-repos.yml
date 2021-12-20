@@ -1,9 +1,0 @@
-push_repos:
-  artifactory:
-    only_if: NV_ARTIFACTORY
-    user: ARTIFACTORY_USER
-    pass: ARTIFACTORY_PASS
-    registry:
-      x86_64: urm.nvidia.com/sw-gpu-cuda-installer-docker-local/cuda-release-candidate/cuda
-      ppc64le: urm.nvidia.com/sw-gpu-cuda-installer-docker-local/cuda-release-candidate/cuda-ppc64le
-      arm64: urm.nvidia.com/sw-gpu-cuda-installer-docker-local/cuda-release-candidate/cuda-arm64
