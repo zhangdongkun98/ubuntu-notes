@@ -98,12 +98,15 @@ sudo make install-config
 
 
 ## clash
-[addr]https://kingfast.cc/docs/#/clash/linux
+
+[addr](https://kingfast.cc/docs/#/clash/linux)
+
+[download](https://github.com/Dreamacro/clash/releases/)
 
 ```bash
 # clash文件见附件
 chmod +x clash
-curl  你的clash订阅链接 > $HOME/.config/clash/config.yaml
+curl  你的clash订阅链接 > $HOME/.config/clash/config.yaml   ### ! warning: check $HOME/.config/clash/config.yaml manually
 ./clash
     # Can't find MMDB, start download
     https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb

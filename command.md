@@ -107,6 +107,14 @@ git push origin master
     lsof -i
 
 
+
+## 查看CPU型号
+
+```bash
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+```
+
+
 ## gpu
 ```bash
 git clone https://github.com/peci1/nvidia-htop.git

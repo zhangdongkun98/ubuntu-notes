@@ -30,8 +30,8 @@ sudo apt install ultra-flat-icons
 
 ### ~/.bashrc
 ```bash
-alias gpu='watch -n 0.3 nvidia-smi'
-alias gpuag='watch -n 0.3 "python3 ~/opt/nvidia-htop/nvidia-htop.py -l 100"'
+alias gpuog='watch -n 0.3 nvidia-smi'
+alias gpu='watch -n 0.3 "python3 ~/opt/nvidia-htop/nvidia-htop.py -l 100"'
 alias wechat='bash ~/opt/wechat.sh'
 alias tb='tensorboard --logdir=. --reload_interval=0.5 --max_reload_threads=8'
 alias condaa='conda activate'
