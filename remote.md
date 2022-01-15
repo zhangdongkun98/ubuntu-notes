@@ -1,5 +1,58 @@
 # VNC
 
+## Install and Configure
+
+
+[Ubuntu18.04LTS安装TigerVNC](https://blog.csdn.net/fjmsonic/article/details/104366421)
+
+### install
+
+```bash
+sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
+sudo apt-get install gnome-session-flashback
+sudo apt-get install gnome-panel
+sudo apt-get install ubuntu-gnome-desktop
+sudo systemctl start gdm
+sudo systemctl enable gdm
+
+sudo apt install tigervnc-standalone-server tigervnc-common
+```
+
+### ~/.vnc/xstartup
+
+```bash
+#!/bin/sh
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+startxfce4 &    #启动xface4
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+xsetroot -solid grey    #设置背景色
+```
+
+```bash
+unset SESSION_MANAGER
+unset DBUS_SESSION_BUS_ADDRESS
+
+vncconfig -iconic &
+dbus-launch --exit-with-session gnome-session &
+```
+
+### configure and use
+
+```bash
+vncpasswd
+```
+
+
+```bash
+vncserver :1 -localhost no -geometry 2240x1260 -depth 32
+vncserver -kill :1
+```
+
+
+## deprecated
+
 
 [Ubuntu18.04 LTS 安装 VNC Server](https://blog.csdn.net/yidichaxiang/article/details/96429007)
 [Ubuntu18.04 LTS 安装 VNC Server[x11vnc,tightvncserver,vnc4server]](https://blog.csdn.net/yidichaxiang/article/details/100533237#commentBox)
@@ -25,16 +78,8 @@ netstat -tulpn
 tigervncserver_1.7.0-1ubuntu1_amd64.deb
 ```
 
-```bash
-sudo apt-get purge realvnc-vnc-server
-sudo apt-get purge realvnc-vnc-viewer
 
-
-vncserver -geometry 2560x1440 -depth 32
-ssh zdk@10.12.120.46 -L 5901:127.0.0.1:5901
-```
-
-## ~/.vnc/xstartup
+### ~/.vnc/xstartup
 ```bash
 #!/bin/sh
  
@@ -67,7 +112,7 @@ exec startxfce4
 ```
 
 
-## TigerVNC
+### TigerVNC
 [install deb](http://tigervnc.bphinz.com/nightly/)
 [github](https://github.com/TigerVNC/tigervnc/releases)
 
@@ -85,7 +130,7 @@ vncserver -kill :3
 [blog](https://blog.csdn.net/yidichaxiang/article/details/96429007)
 
 
-# VNC BK
+### VNC BK
 
 	sudo apt-get install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
 	sudo apt-get install gnome-core
