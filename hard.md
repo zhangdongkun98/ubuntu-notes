@@ -48,10 +48,11 @@ sudo umount /dev/sdb4
 ## 查看磁盘
 	lsblk
 
-cha kan sheng yu kong jian
+
+## 查看剩余空间
 
 ```
-df -hl
+df -hl .
 ```
 
 
