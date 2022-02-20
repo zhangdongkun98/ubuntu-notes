@@ -368,12 +368,28 @@ dconf-editor
 
 # tmux
 
+### install
+
 ```bash
 sudo apt install tmux
+```
 
+### 默认配置
+
+```bash
 cd
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
 ```
 
+### 修改prefix前缀快捷键
+
+[blog](https://www.tkmiss.com/archives/105.html)
+
+```bash
+vim ~/.tmux.conf   ### or ~/.tmux.conf.local if has this file
+  set -g prefix C-x
+  unbind C-b
+  bind C-x send-prefix
+```

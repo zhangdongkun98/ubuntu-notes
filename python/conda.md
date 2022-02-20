@@ -1,6 +1,7 @@
 
 
-[版本选择](https://repo.anaconda.com/miniconda/)
+[版本选择](https://repo.anaconda.com/miniconda/) <br>
+
 
 ```bash
 sh Miniconda3-latest-Linux-x86_64.sh -b

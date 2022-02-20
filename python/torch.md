@@ -1,5 +1,14 @@
 ## torch版本选择
-[items](https://download.pytorch.org/whl/torch_stable.html)
+
+[选择1](https://download.pytorch.org/whl/torch_stable.html) (寻找torch1.9.1+cu111，给3090用) <br>
+[选择2](https://pypi.org/project/torch/1.9.1/#files)
+
+
+### 3090
+
+- torch-1.9.1+cu111-cp37-cp37m-linux_x86_64.whl
+- torchvision-0.10.1+cu111-cp37-cp37m-linux_x86_64.whl
+
 
 ## 内存泄露
 

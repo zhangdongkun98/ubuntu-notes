@@ -23,3 +23,10 @@
 [web](https://pinyin.sogou.com/mac/)
 
 
+
+
+# 查看电池健康
+
+```bash
+ioreg -rn AppleSmartBattery | grep -i capacity
+```

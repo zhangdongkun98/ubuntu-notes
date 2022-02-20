@@ -74,6 +74,14 @@ git pull --all
 ```
 
 
+### 回退特定文件
+
+```bash
+git checkout <commit> <filename>
+```
+
+
+
 ## git加速
 
 ```bash
