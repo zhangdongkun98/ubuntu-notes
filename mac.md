@@ -30,3 +30,21 @@
 ```bash
 ioreg -rn AppleSmartBattery | grep -i capacity
 ```
+
+
+
+# brew
+
+[blog](Mac安装Homebrew的正确姿势)
+
+```bash
+/bin/bash -c "$(curl -fsSL https://gitee.com/ineo6/homebrew-install/raw/master/install.sh)"
+```
+
+
+
+# 系统监控工具 eul
+
+[web](https://github.com/gao-sun/eul)
+
+
