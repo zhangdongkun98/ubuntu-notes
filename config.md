@@ -393,3 +393,18 @@ vim ~/.tmux.conf   ### or ~/.tmux.conf.local if has this file
   unbind C-b
   bind C-x send-prefix
 ```
+
+
+
+
+# Google Cloud CLI / gsutil
+
+[web](https://cloud.google.com/storage/docs/gsutil_install#deb) <br>
+
+```bash
+sudo apt-get install apt-transport-https ca-certificates gnupg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+sudo apt-get update && sudo apt-get install google-cloud-cli
+gcloud init
+```
