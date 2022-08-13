@@ -34,6 +34,14 @@ wget https://github.com/conda-forge/miniforge/releases/download/4.12.0-0/Minifor
 ```
 
 
+### opencv in python 3.6
+
+[ERROR: Could not build wheels for opencv-python which use PEP 517 and cannot be installed directly](https://stackoverflow.com/questions/63732353/error-could-not-build-wheels-for-opencv-python-which-use-pep-517-and-cannot-be)
+
+```bash
+pip install opencv-python==3.4.17.63
+```
+
 ### pytorch in python 3.6
 
 [issue](https://forums.developer.nvidia.com/t/cannot-install-pytorch/149226) <br>

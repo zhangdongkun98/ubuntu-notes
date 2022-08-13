@@ -1,5 +1,15 @@
 
 
+# ssh server
+
+[How do you run a SSH server on Mac OS X?](https://superuser.com/questions/104929/how-do-you-run-a-ssh-server-on-mac-os-x) <br>
+- Go to System Preferences -> Sharing, enable Remote Login.
+
+
+
+
+
+
 # VLC
 
 [download](https://mirrors.neusoft.edu.cn/videolan/vlc/3.0.16/macosx/vlc-3.0.16-arm64.dmg)

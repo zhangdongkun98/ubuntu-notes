@@ -2,7 +2,7 @@
 
 ## Guide
 
-[命令行翻墙](./config.md#proxychains-ng-proxychains4) <br>
+[命令行翻墙](./net.md#proxychains-ng-proxychains4) <br>
 
 [显卡驱动(cuda 11.0)](./graphics.md#cuda-toolkit-110-download) <br>
 

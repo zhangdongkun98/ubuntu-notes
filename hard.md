@@ -48,6 +48,14 @@ sudo umount /dev/sdb4
 ## 查看磁盘
 	lsblk
 
+## 查看磁盘型号
+
+```bash
+sudo apt install lsscsi
+lsscsi
+```
+
+
 
 ## 查看剩余空间
 
@@ -57,6 +65,25 @@ df -hl .
 
 
 # 网卡
+
+
+
+## Realtek 8125 有线网卡
+
+[Ubuntu下安装RealtekRTL8125网卡驱动](https://blog.csdn.net/hellohake/article/details/109908363) <br>
+
+[官网驱动](https://www.realtek.com/zh-tw/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-pci-express-software)
+
+```bash
+### 查看网卡型号
+lspci | grep -i ethernet
+
+### 安装
+sudo ./autorun.sh
+```
+
+
+
 ## TP-LINK 无线网卡（TL-WDN5200H免驱版）安装驱动
 [blog](https://zhuanlan.zhihu.com/p/214136483)
 

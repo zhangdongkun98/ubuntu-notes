@@ -54,7 +54,7 @@ find . -name '*.zip' -exec unzip -n -d /target/dir {} \;
 
 ## git
 
-### breate new repo
+### create new repo
 ```bash
 # create a new repository on the command line
 echo "# d2l-en" >> README.md
@@ -62,7 +62,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M master
-git remote add origin https://github.com/yiran98/d2l-en.git
+git remote add origin https://github.com/zhangdongkun98/ubuntu-notes.git
 git push -u origin master
 ```
 
@@ -82,12 +82,13 @@ git checkout <commit> <filename>
 
 
 
-## git加速
+### 根据tag创建分支
 
 ```bash
-subl ~/.gitconfig
-subl /etc/hosts
+git branch <new-branch-name> <tag-name>
+git push origin <new-branch-name>
 ```
+
 
 ## git-lfs
 
