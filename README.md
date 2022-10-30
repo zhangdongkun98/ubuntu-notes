@@ -39,7 +39,7 @@ alias condad='conda deactivate'
 alias opn='code ~/github/zdk/ubuntu-notes'
 alias yg='proxychains4 you-get'
 alias route='sudo bash /etc/rc.local'
-alias gs='git status'
+alias gtt='git status'
 alias gd='git diff'
 ```
 

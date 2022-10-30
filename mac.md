@@ -90,3 +90,15 @@ sudo make install
 sudo make install-config
 ```
 
+
+
+# LaTex
+
+[Mac 安装 LaTeX（MacTeX）](https://blog.csdn.net/u013103952/article/details/108604747)
+
+[Recipe terminated with fatal error: spawn latexmk ENOENT](https://stackoverflow.com/questions/68179318/recipe-terminated-with-fatal-error-spawn-latexmk-enoent) <br>
+```bash
+sudo chown -R <username> /usr/local/texlive
+```
+
+

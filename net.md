@@ -105,7 +105,11 @@ sudo apt update -o Acquire::http::proxy="http://127.0.0.1:2341/"
 ```
 
 
+# 校外网VPN
 
+```bash
+sudo apt install network-manager-l2tp network-manager-l2tp-gnome
+```
 
 
 

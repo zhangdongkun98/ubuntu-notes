@@ -402,8 +402,18 @@ sudo apt-get install texlive-publishers
 
 点击Edit in settings.json 写入
 
+
 ```json
     "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
         {
             "name": "xelatex",
             "tools": [
@@ -417,15 +427,6 @@ sudo apt-get install texlive-publishers
                 "bibtex",
                 "xelatex",
                 "xelatex"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex*2",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
             ]
         },
     ],
@@ -459,7 +460,6 @@ sudo apt-get install texlive-publishers
             ]
         },
     ],
-
 ```
 
 
