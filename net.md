@@ -101,7 +101,7 @@ sudo apt-get -f install libappindicator1 libindicator7
 
 - apt
 ```bash
-sudo apt update -o Acquire::http::proxy="http://127.0.0.1:2341/"
+sudo apt update -o Acquire::http::proxy="http://127.0.0.1:2340/"
 ```
 
 

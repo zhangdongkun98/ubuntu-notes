@@ -386,14 +386,14 @@ sudo apt install qbittorrent
 [Ubuntu 使用 Latex，使用VS Code 中文](https://zhuanlan.zhihu.com/p/65931654)
 
 ```bash
-
 sudo apt-get install texlive-latex-base
 sudo apt-get install latex-cjk-all
 sudo apt-get install texlive-latex-extra
 sudo apt-get install texmaker
 sudo apt-get install texlive-xetex
 sudo apt-get install texlive-publishers
-
+sudo apt-get install texlive-science
+sudo apt-get install texlive-fonts-extra
 ```
 
 安装插件Latex Workshop

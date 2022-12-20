@@ -9,6 +9,11 @@
 - torch-1.9.1+cu111-cp37-cp37m-linux_x86_64.whl
 - torchvision-0.10.1+cu111-cp37-cp37m-linux_x86_64.whl
 
+```bash
+wget https://download.pytorch.org/whl/cu116/torch-1.13.0%2Bcu116-cp37-cp37m-linux_x86_64.whl
+wget https://download.pytorch.org/whl/cu116/torchvision-0.14.0%2Bcu116-cp37-cp37m-linux_x86_64.whl
+```
+
 
 ## 内存泄露
 
