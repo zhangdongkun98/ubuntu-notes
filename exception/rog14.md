@@ -32,3 +32,60 @@ sudo make install
 
 update-grub
 ```
+
+
+
+
+### 多显示器(20.04)
+
+[Asus ROG Zephyrus G14 / 幻14 Ubuntu 外接HDMI显示屏检测不到，AMD核显驱动配置，AMD+Nvidia双显卡配置](https://blog.csdn.net/weixin_53242716/article/details/110948529)
+
+```bash
+### 1. add mdgpu.exp_hw_support=1
+sudo vim /etc/default/grub
+##### in file
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.exp_hw_support=1"
+##### exit file
+
+sudo update-grub
+reboot
+
+### 2. forbid nouveau
+sudo vim /etc/modprobe.d/blacklist-nouveau.conf
+##### in file
+blacklist nouveau
+options nouveau modeset=0
+##### exit file
+
+sudo update-initramfs -u
+reboot
+lsmod | grep nouveau
+
+### 3. install nvidia-driver
+
+### 4. primary gpu
+sudo vim /usr/share/X11/xorg.conf.d/10-amdgpu.conf
+##### in file
+Section "OutputClass"
+    Identifier "AMDgpu"
+    MatchDriver "amdgpu"
+    Driver "amdgpu"
+    Option "PrimaryGPU" "no"
+EndSection
+##### exit file
+
+sudo vim /usr/share/X11/xorg.conf.d/10-nvidia.conf
+##### in file
+Section "OutputClass"
+	Identifier "nvidia"
+	MatchDriver "nvidia-drm"
+	Driver "nvidia"
+	Option "AllowEmptyInitialConfiguration"
+	Option "PrimaryGPU" "yes"
+	ModulePath "/usr/lib/x86_64-linux-gnu/nvidia/xorg"
+EndSection
+##### exit file
+
+
+```
+
