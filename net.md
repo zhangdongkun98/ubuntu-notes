@@ -13,7 +13,7 @@
 ```bash
 git clone https://github.com/rofl0r/proxychains-ng.git
 cd proxychains-ng
-./configure --prefix=/usr --sysconfdir=/etc
+./configure --prefix=/usr --sysconfdir=/etc   ### ./configure --prefix=$HOME/usr
 make
 sudo make install
 sudo make install-config
@@ -26,12 +26,16 @@ sudo make install-config
 
 [addr](https://kingfast.cc/docs/#/clash/linux)
 
-[download](https://github.com/Dreamacro/clash/releases/)
+[download](https://github.com/doreamon-design/clash/releases)
+<!-- [download](https://github.com/Dreamacro/clash/releases/) -->
+
+
+[web config](https://clash.razord.top/)
 
 ```bash
 # clash文件见附件
 chmod +x clash
-curl  你的clash订阅链接 > $HOME/.config/clash/config.yaml   ### ! warning: check $HOME/.config/clash/config.yaml manually
+curl  你的订阅链接 > $HOME/.config/clash/config.yaml   ### ! warning: check $HOME/.config/clash/config.yaml manually
 ./clash
     # Can't find MMDB, start download
     https://github.com/Dreamacro/maxmind-geoip/releases/latest/download/Country.mmdb

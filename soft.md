@@ -404,7 +404,16 @@ sudo apt-get install texlive-fonts-extra
 
 
 ```json
+
+    "latex-workshop.latex.autoBuild.run": "onSave",
     "latex-workshop.latex.recipes": [
+
+        {
+            "name": "pdflatex",
+            "tools": [
+                "pdflatex",
+            ]
+        },
         {
             "name": "pdflatex -> bibtex -> pdflatex*2",
             "tools": [
@@ -414,6 +423,17 @@ sudo apt-get install texlive-fonts-extra
                 "pdflatex"
             ]
         },
+        {
+            "name": "pdflatex -> makeindex -> bibtex -> pdflatex`×2",
+            "tools": [
+                "pdflatex",
+                "makeindex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+
         {
             "name": "xelatex",
             "tools": [
@@ -457,6 +477,17 @@ sudo apt-get install texlive-fonts-extra
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "%DOC%"
+            ]
+        },
+        { 
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "%DOCFILE%.nlo",
+                "-s",
+                "nomencl.ist",
+                "-o",
+                "%DOCFILE%.nls"
             ]
         },
     ],

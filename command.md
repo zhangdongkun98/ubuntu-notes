@@ -73,6 +73,17 @@ git fetch --all
 git pull --all
 ```
 
+### remove all history commits
+
+```bash
+git checkout --orphan new-history
+git add -A
+git commit -m "Initial commit"
+git branch -D main  # or the main branch you're working with
+git branch -m main
+git push -f origin main
+```
+
 
 ### 回退特定文件
 
@@ -90,7 +101,7 @@ git push origin <new-branch-name>
 ```
 
 
-## git-lfs
+### git-lfs
 
 [doc](https://git-lfs.github.com/)
 [package](https://github.com/git-lfs/git-lfs/releases)
@@ -109,6 +120,10 @@ git add file.psd
 git commit -m "Add design file"
 git push origin master
 ```
+
+
+
+
 
 ## 查看端口
 
